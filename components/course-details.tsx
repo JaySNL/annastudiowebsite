@@ -1,38 +1,38 @@
 "use client"
 
-import { Calendar, MapPin, Clock, Users, Euro } from "lucide-react"
+import { Calendar, Laptop, Clock, Users, Euro } from "lucide-react"
 
 export function CourseDetails() {
   const details = [
     {
-      icon: Calendar,
-      label: "Data",
-      value: "8x Dinsdagavond",
-      subtitle: "Vanaf 6 januari 2026",
+      icon: Users,
+      label: "Format",
+      value: "1-op-1 begeleiding",
+      subtitle: "Persoonlijke aandacht voor jouw verhaal",
     },
     {
       icon: Clock,
-      label: "Tijd",
-      value: "19:30 - 21:30 uur",
-      subtitle: "16 uur les in totaal",
+      label: "Duur",
+      value: "6 sessies van 1 uur",
+      subtitle: "Flexibel in te plannen",
     },
     {
-      icon: MapPin,
+      icon: Laptop,
       label: "Locatie",
-      value: "Hart Haarlem",
-      subtitle: "Gedempte Oude Gracht 32, Haarlem",
+      value: "Online / op locatie",
+      subtitle: "In overleg met de docent",
     },
     {
-      icon: Users,
-      label: "Groepsgrootte",
-      value: "Max. 12 deelnemers",
-      subtitle: "Kleinschalig voor persoonlijke aandacht",
+      icon: Calendar,
+      label: "Planning",
+      value: "Op afspraak",
+      subtitle: "Start wanneer het jou uitkomt",
     },
     {
       icon: Euro,
       label: "Prijs",
-      value: "€349,- voor de complete cursus",
-      subtitle: "Inclusief alle materialen en feedback",
+      value: "€395,- (early bird)",
+      subtitle: "Regulier €495,- na pilotfase",
     },
   ]
 
@@ -66,27 +66,27 @@ export function CourseDetails() {
           </div>
 
           <div className="mt-12 p-8 bg-background rounded-2xl shadow-soft border border-primary/20">
-            <h3 className="text-2xl font-serif font-bold mb-4">Voor wie is deze cursus?</h3>
+            <h3 className="text-2xl font-serif font-bold mb-4">Voor wie is deze begeleiding?</h3>
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-start gap-3">
                 <span className="text-primary mt-1">•</span>
-                <span>Je wilt leren hoe je een kort verhaal schrijft van begin tot eind</span>
+                <span>Je wilt serieus werken aan één kort verhaal</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary mt-1">•</span>
-                <span>Je hebt ideeën maar weet niet goed hoe je ze moet uitwerken</span>
+                <span>Je zoekt persoonlijke begeleiding en feedback op maat</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary mt-1">•</span>
-                <span>Je wilt leren van literaire voorbeelden en klassieke verhalen</span>
+                <span>Je wilt verdieping in perspectief, structuur en stijl</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary mt-1">•</span>
-                <span>Je zoekt een inspirerende groep om mee te schrijven en te delen</span>
+                <span>Je bent bereid te investeren in herziening en groei</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary mt-1">•</span>
-                <span>Je wilt persoonlijke feedback op je werk van een ervaren docent</span>
+                <span>Je wilt leren van literaire voorbeelden (Tsjechov, Biesheuvel, Dahl, Kafka)</span>
               </li>
             </ul>
           </div>

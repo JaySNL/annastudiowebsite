@@ -19,10 +19,9 @@ export function CourseCTA() {
                 Beperkt aantal plekken
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Schrijf je in voor de cursus</h2>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Start met schrijfbegeleiding</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Start jouw schrijfreis in oktober 2025. Ontwikkel je talent en schrijf je eerste korte verhaal onder
-                professionele begeleiding.
+                Begin jouw schrijfreis met persoonlijke begeleiding. Ontwikkel je talent en schrijf je eerste korte verhaal onder professionele één-op-één begeleiding.
               </p>
             </div>
 
@@ -30,7 +29,7 @@ export function CourseCTA() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-semibold text-foreground">8 weken intensief</p>
+                  <p className="font-semibold text-foreground">6 sessies van 1 uur</p>
                   <p className="text-sm text-muted-foreground">Van idee naar afgerond verhaal</p>
                 </div>
               </div>
@@ -38,43 +37,33 @@ export function CourseCTA() {
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-foreground">Persoonlijke feedback</p>
-                  <p className="text-sm text-muted-foreground">Op al je huiswerkopdrachten</p>
+                  <p className="text-sm text-muted-foreground">Schriftelijk tussen de sessies</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-semibold text-foreground">Kleinschalig</p>
-                  <p className="text-sm text-muted-foreground">Max. 12 enthousiaste cursisten</p>
+                  <p className="font-semibold text-foreground">Flexibel</p>
+                  <p className="text-sm text-muted-foreground">Online of op locatie</p>
                 </div>
               </div>
             </div>
 
             <div className="text-center space-y-4">
               <Link
-                href="https://www.hart-haarlem.nl/cursussen/d/q/c/585/schrijf-jouw-korte-verhaal"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/#contact"
                 className="inline-flex items-center justify-center gap-2 text-lg px-8 py-6 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
-                Schrijf je nu in bij Hart Haarlem
+                Vraag informatie aan
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <p className="text-sm text-muted-foreground">
-                Inschrijven doe je via{" "}
-                <a
-                  href="https://www.hart-haarlem.nl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline font-medium"
-                >
-                  Hart Haarlem
-                </a>
+                Early bird: €395,- (pilotfase) • Regulier: €495,-
               </p>
 
               <div className="pt-6 border-t border-border mt-6">
-                <p className="text-muted-foreground mb-2">Vragen over de cursus?</p>
+                <p className="text-muted-foreground mb-2">Vragen over de begeleiding?</p>
                 <Button variant="outline" size="lg">
                   <Link href="/#contact">
                     Neem contact op

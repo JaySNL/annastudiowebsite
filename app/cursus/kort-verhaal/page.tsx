@@ -10,15 +10,15 @@ import { JsonLdCourse } from "@/components/json-ld-course"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
 export const metadata: Metadata = {
-  title: "Schrijf jouw Korte Verhaal - Cursus bij Hart Haarlem | Anna Strijbos",
+  title: "Individuele Schrijfbegeleiding - Korte Verhalen | Anna Strijbos",
   description:
-    "Leer in 8 weken hoe je een meeslepend kort verhaal schrijft. Schrijfcursus onder begeleiding van Anna Strijbos bij Hart Haarlem. Start januari 2026. Kleinschalige groep, persoonlijke feedback.",
+    "Leer in zes persoonlijke sessies hoe je een meeslepend kort verhaal schrijft. Individuele begeleiding van Anna Strijbos. Online of op locatie. Early bird €395,-.",
   keywords:
-    "schrijfcursus, kort verhaal schrijven, creatief schrijven, schrijfworkshop, Hart Haarlem, Anna Strijbos, schrijven leren, verhaaltechniek, korte verhalen cursus, schrijfdocent Haarlem, creatief schrijven Haarlem",
+    "schrijfbegeleiding, kort verhaal schrijven, creatief schrijven, schrijfcoaching, Anna Strijbos, schrijven leren, verhaaltechniek, korte verhalen, schrijfdocent, individuele begeleiding",
   openGraph: {
-    title: "Schrijf jouw Korte Verhaal - Cursus bij Hart Haarlem | Anna Strijbos",
+    title: "Individuele Schrijfbegeleiding - Korte Verhalen | Anna Strijbos",
     description:
-      "Leer in 8 weken hoe je een meeslepend kort verhaal schrijft onder begeleiding van Anna Strijbos. Start januari 2026 bij Hart Haarlem.",
+      "Leer in zes persoonlijke sessies hoe je een meeslepend kort verhaal schrijft. Individuele begeleiding van Anna Strijbos.",
     type: "website",
     locale: "nl_NL",
     url: "https://www.annasschrijfstudio.nl/cursus/kort-verhaal",
