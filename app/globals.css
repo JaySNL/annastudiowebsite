@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* New Professional Color Palette - Warm Neutrals */
+    --background: 40 20% 97%;
+    --foreground: 30 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
+
+    /* Primary - Warm Taupe/Bronze */
+    --primary: 30 25% 65%;
+    --primary-foreground: 30 20% 20%;
+    --primary-hover: 30 25% 55%;
+
+    /* Secondary - Deep Charcoal */
+    --secondary: 30 10% 20%;
+    --secondary-foreground: 40 20% 95%;
+
+    /* Accent - Subtle Gold */
+    --accent: 35 35% 65%;
+    --accent-foreground: 35 40% 25%;
+
+    --muted: 40 15% 92%;
+    --muted-foreground: 30 10% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 30 25% 65%;
+
+    --radius: 1rem;
+
+    /* Professional Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.2);
+  }
+
+  .dark {
+    --background: 30 15% 12%;
+    --foreground: 40 20% 95%;
+
+    --card: 30 12% 15%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 30 12% 15%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 30 25% 60%;
+    --primary-foreground: 30 20% 95%;
+    --primary-hover: 30 25% 50%;
+
+    --secondary: 40 20% 85%;
+    --secondary-foreground: 30 10% 20%;
+
+    --accent: 35 35% 60%;
+    --accent-foreground: 35 40% 90%;
+
+    --muted: 30 12% 18%;
+    --muted-foreground: 40 15% 70%;
+
+    --border: 30 12% 25%;
+    --input: 30 12% 25%;
+    --ring: 30 25% 55%;
+
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Enhanced Fluid Typography */
+@layer utilities {
+  .fluid-h1 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  .fluid-h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .fluid-h3 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  .fluid-h4 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  .fluid-p {
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.7;
+  }
+
+  .fluid-small {
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+    line-height: 1.6;
+  }
+
+  /* Glassmorphism utility */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+  }
+
+  /* Professional shadows */
+  .shadow-soft {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-lifted {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-floating {
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Animation utilities */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-left {
+    animation: fadeInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-right {
+    animation: fadeInRight 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Stagger animation delays */
+  .animate-delay-100 {
+    animation-delay: 0.1s;
+  }
+  .animate-delay-200 {
+    animation-delay: 0.2s;
+  }
+  .animate-delay-300 {
+    animation-delay: 0.3s;
+  }
+  .animate-delay-400 {
+    animation-delay: 0.4s;
+  }
+  .animate-delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  /* Added hide-scrollbar utility for book slider */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Remove old pencil animation styles */

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Edmond Tarée",
+    "service": "manuscriptbeoordeling",
+    "rating": 5,
+    "text": "Dank voor de grondige review. Ik heb hier zeker wat aan en ga ermee aan de slag om het manuscript te verbeteren. Mocht ik in de toekomst weer aan een project beginnen (ik moet zeggen dat ik het best leuk vond om te doen) dan weet ik je te vinden.",
+    "avatar": "/placeholder.svg?height=80&width=80"
+  },
+  {
+    "id": 2,
+    "name": "Gerard Commijs",
+    "service": "manuscriptbeoordeling",
+    "rating": 5,
+    "text": "Anna legde feilloos haar vinger op de zwakke plekken in mijn manuscript, en gaf zeer bruikbare adviezen over de inhoud, de stijl en de opbouw van mijn verhaal. Ze geeft steekhoudend en inspirerend commentaar, gebracht op een prettige toon. Ik heb er veel profijt van gehad.",
+    "avatar": "/placeholder.svg?height=80&width=80"
+  },
+  {
+    "id": 3,
+    "name": "Sander Cox",
+    "service": "manuscriptbeoordeling",
+    "rating": 5,
+    "text": "Bedankt voor de beoordeling, Ik zie hele waardevolle feedback waar ik erg blij mee ben en die mij ook behoorlijk wat tijd gaat besparen bij het schrijven van het tweede deel van het boek. Ik zal ook zeker het tweede deel door jou laten beoordelen.",
+    "avatar": "/placeholder.svg?height=80&width=80"
+  },
+  {
+    "id": 4,
+    "name": "Judith Groeneveld",
+    "service": "manuscriptbeoordeling",
+    "rating": 5,
+    "text": "Dank dat je het manuscript onder handen genomen hebt. Je aanwijzingen zijn duidelijk en ik kan er zeker wat mee. Ik zal zeker positief over je spreken en je aanbevelen.",
+    "avatar": "/placeholder.svg?height=80&width=80"
+  },
+  {
+    "id": 5,
+    "name": "Emmeline Torenbeek",
+    "service": "schrijfcursus",
+    "rating": 5,
+    "text": "Nog bedankt voor je eindrapport en je feedback op mijn laatste opdracht! Ik vond het een waardevolle cursus omdat ik verschillende genres heb kunnen uitproberen. Mijn verwachting was dat proza en (autobiografische) fictie mij het best lagen, maar uit jouw commentaar blijkt dat ik iets zou kunnen doen met scenarioschrijven en poëzie. Wellicht kom ik nog eens bij je terug om te sparren over een project/cursus. Dank voor je uitnodiging hiervoor. Het is fijn om de mening van een professional te horen.",
+    "avatar": "/placeholder.svg?height=80&width=80"
+  },
+  {
+    "id": 6,
+    "name": "Annemieke Wittebol-Prins",
+    "service": "schrijfcursus",
+    "rating": 5,
+    "text": "Hierbij alweer de laatste opdracht. Ik vond het best lastig om te beginnen omdat ik mijn hele verhaal moest loslaten maar merkte dat, na mate ik ervoor ging zitten en de geleerde dingen erbij ging pakken, er toch weer een heel ander verhaal naar boven kwam met wel overeenkomsten uit de eerste opdracht. Ik vond het erg leuk en ben je erg dankbaar voor je adviezen, tips en hulp. Daarvoor dank. Heb er veel van geleerd en het heeft me ook zelfverzekerder gemaakt. Dat, als ik maar gewoon begin met schrijven, er altijd wel iets ontstaat. Het heeft me erg verrast hoeveel erbij komt kijken om een goed verhaal te kunnen schrijven en ik vind het leuk om te merken dat al die adviezen en tips ervoor zorgen dat er nu al een ander verhaal staat als de eerste keer dat ik het inleverde.",
+    "avatar": "/placeholder.svg?height=80&width=80"
+  }
+]
