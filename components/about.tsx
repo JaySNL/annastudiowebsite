@@ -71,7 +71,7 @@ export function About() {
     {
       year: "Heden",
       title: "Schrijven Online & Freelance Redactie",
-      description: "Manuscriptbeoordelingen, schrijfopdrachten begeleiden en freelance eindredacteur bij Blossom Books",
+      description: "Manuscriptbeoordelingen, schrijfopdrachten begeleiden en freelance (eind)redacteur en schrijver",
       icon: <Briefcase className="h-5 w-5 text-primary" />,
     },
     {
@@ -85,7 +85,7 @@ export function About() {
       year: "Publicaties",
       title: "Literaire Werken",
       description:
-        "Diverse publicaties in Lezenswaardig, Blind, Prothesis en Schrijven Magazine. Werkend aan novelle en prentenboek",
+        "Diverse publicaties in Lezenswaardig, Blind, Phronèsis en Schrijven Magazine. Werkend aan novelle en prentenboek",
       icon: <Award className="h-5 w-5 text-primary" />,
     },
   ]
@@ -120,13 +120,19 @@ export function About() {
                 <h3 className="text-2xl font-serif font-bold text-foreground mb-4">Mijn Verhaal</h3>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    Mijn novelle is een kernachtige, literaire roman waarin obsessieve liefde, vroegkinderlijk trauma en
-                    de zoektocht naar identiteit samenkomen. Een rauwe, eerlijke vertelling waarin geen woord te veel
-                    staat.
+                    Ik ben Anna Strijbos, geboren in 2001 in Heemstede en woonachtig in Haarlem. Toen ik zeventien was, begon ik met het schrijven van een autobiografie. Ik was lange tijd ziek geweest en kampte met mentale klachten, en voelde de behoefte om daar woorden aan te geven.
                   </p>
                   <p>
-                    Daarnaast werk ik aan een prentenboek, waarin speelse en fantasierijke figuren kinderen op een
-                    toegankelijke manier iets leren over het lichaam.
+                    Met mijn eerste versie stapte ik naar een freelance redacteur. Die maakte duidelijk dat er nog veel aan het manuscript moest gebeuren; iets wat ik toen als confronterend en pijnlijk ervoer, maar wat achteraf een keerpunt bleek. In plaats van te stoppen, besloot ik me te verdiepen in schrijven en redactie. Ik begon verschillende genres te lezen en analyseren, sloot me een jaar later aan bij Schrijven Magazine om feedback te geven op verhalen, en ontwikkelde gaandeweg een scherp oog voor tekst.
+                  </p>
+                  <p>
+                    Die ontwikkeling leidde tot een stage bij uitgeverij Atlas Contact, samenwerkingen met uitgeverijen en particuliere auteurs, en uiteindelijk tot de oprichting van Anna's Studio.
+                  </p>
+                  <p>
+                    Omdat ik weet hoe kwetsbaar een manuscript kan zijn, ga ik met grote zorg om met iedere tekst die ik lees. Eerlijkheid staat bij mij voorop, maar altijd in combinatie met aandacht, precisie en respect voor de stem van de schrijver. Ik denk daarbij nog regelmatig terug aan het meisje van zeventien dat ik was: onzeker, maar vastbesloten om te schrijven.
+                  </p>
+                  <p>
+                    Ieder boek raakt aan iets wezenlijks, en aan iedere tekst valt te schaven. Vanuit die overtuiging werk ik: analytisch, betrokken en met oog voor zowel inhoud als vorm.
                   </p>
                 </div>
               </div>
@@ -157,11 +163,12 @@ export function About() {
                     { title: "Lezenswaardig", work: "55-woordenverhalen 'Tropen Trauma'" },
                     { title: "Lezenswaardig", work: "Verhalen waar je blij van wordt! 'Stilte na haar'" },
                     { title: "Blind", work: "Kort verhaal 'Absint'" },
-                    { title: "Prothesis", work: "Filosofisch artikel" },
-                    { title: "Schrijven Magazine", work: "Regelmatige artikelen" },
+                    { title: "Phronèsis", work: "Het belang van filosofie in het onderwijs" },
+                    { title: "Katholiek Nieuwsblad", work: "Interview Katie Vlaardingerbroek: Therapie als nieuwe religie?" },
+                    { title: "Schrijven Magazine", work: "Regelmatige artikelen // Auteur artikelen" },
                     {
                       title: "schrijvenonline.org",
-                      work: "Ultrakorte verhalen zoals: Planten wateren, Omi en Autisme",
+                      work: "Meerdere 99-woordenverhalen",
                     },
                   ].map((pub, index) => (
                     <li key={index} className="flex items-start gap-2">

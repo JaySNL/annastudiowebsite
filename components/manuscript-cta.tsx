@@ -78,7 +78,7 @@ export function ManuscriptCta() {
     let manuscriptPrice = 0
 
     if (formData.packageType === "basis") {
-      manuscriptPrice = 89 + wordCount * 0.01
+      manuscriptPrice = (wordCount / 1000) * 8.95
     } else if (formData.packageType === "uitgebreid") {
       manuscriptPrice = (wordCount / 1000) * 10.95
     } else if (formData.packageType === "volledige-eindredactie") {
@@ -248,7 +248,7 @@ export function ManuscriptCta() {
                 Vul het formulier in en ik neem binnen 24 uur contact met je op om de mogelijkheden te bespreken.
               </p>
               <p className="text-sm text-muted-foreground mt-2">
-                Basis leesrapport: €89 + €0,01 per woord | Uitgebreid leesrapport: €10,95 per 1000 woorden | Volledige
+                Basis leesrapport: €8,95 per 1000 woorden | Uitgebreid leesrapport: €10,95 per 1000 woorden | Volledige
                 eindredactie: €30 per 1000 woorden
               </p>
             </div>
@@ -394,7 +394,7 @@ export function ManuscriptCta() {
                   required
                 >
                   <option value="">Selecteer pakket</option>
-                  <option value="basis">Basis Leesrapport (€89 + €0,01 per woord)</option>
+                  <option value="basis">Basis Leesrapport (€8,95 per 1000 woorden)</option>
                   <option value="uitgebreid">Uitgebreid Leesrapport (€10,95 per 1000 woorden)</option>
                   <option value="volledige-eindredactie">Volledige Eindredactie (€30 per 1000 woorden - alleen)</option>
                   <option value="volledig">Volledig Redactietraject (op aanvraag)</option>

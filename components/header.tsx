@@ -27,6 +27,7 @@ export function Header() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/manuscriptbeoordeling", label: "Manuscriptbeoordeling" },
+    { href: "/cursus/kort-verhaal", label: "Cursus" },
     {
       href: "/#about",
       label: "Over Anna",
@@ -47,9 +48,8 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "glass shadow-soft border-b border-border/50" : "bg-background/80 backdrop-blur-sm"
-      }`}
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? "glass shadow-soft border-b border-border/50" : "bg-background/80 backdrop-blur-sm"
+        }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">

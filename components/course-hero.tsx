@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Calendar, MapPin, Users, Clock } from "lucide-react"
+import { Calendar, Users, Clock, Target } from "lucide-react"
 
 export function CourseHero() {
   return (
@@ -13,57 +13,48 @@ export function CourseHero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            Beperkt aantal plekken beschikbaar
+            Early bird aanbieding - Beperkt aantal plekken
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-6">
-            Schrijf jouw Korte Verhaal
+            Individuele schrijfbegeleiding – Korte verhalen
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Leer in 8 weken hoe je een meeslepend kort verhaal schrijft. Van idee naar afgerond verhaal van 1500
-            woorden.
+            Leer in zes persoonlijke sessies hoe je een kort verhaal schrijft dat blijft hangen. Van eerste idee tot afgerond verhaal.
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 mb-10">
             <div className="flex items-center gap-2 text-muted-foreground">
-              <Calendar className="h-5 w-5 text-primary" />
-              <span className="font-medium">Vanaf 6 januari 2026</span>
+              <Users className="h-5 w-5 text-primary" />
+              <span className="font-medium">1-op-1 begeleiding</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
               <Clock className="h-5 w-5 text-primary" />
-              <span className="font-medium">8x Dinsdagavond • 19:30-21:30</span>
+              <span className="font-medium">6 sessies van 1 uur</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
-              <MapPin className="h-5 w-5 text-primary" />
-              <span className="font-medium">Hart Haarlem</span>
-            </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Users className="h-5 w-5 text-primary" />
-              <span className="font-medium">Max. 12 deelnemers</span>
+              <Target className="h-5 w-5 text-primary" />
+              <span className="font-medium">± 1.500 woorden</span>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href="https://www.hart-haarlem.nl/cursussen/d/q/c/585/schrijf-jouw-korte-verhaal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button size="lg" className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                Schrijf je nu in bij Hart Haarlem
-              </Button>
-            </a>
             <a href="/#contact">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent">
-                Stel een vraag
+              <Button size="lg" className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                Vraag informatie aan
               </Button>
             </a>
           </div>
 
-          <p className="mt-6 text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">€349,-</span> voor de complete cursus
-          </p>
+          <div className="mt-6 space-y-2">
+            <p className="text-sm text-muted-foreground">
+              <span className="font-semibold text-foreground">Early bird: €395,-</span> (pilotfase)
+            </p>
+            <p className="text-xs text-muted-foreground">
+              Reguliere prijs na pilotfase: €495,-
+            </p>
+          </div>
         </div>
       </div>
     </section>

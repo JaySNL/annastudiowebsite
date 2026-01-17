@@ -99,7 +99,7 @@ export function ManuscriptHero() {
 
                 <div className="space-y-4">
                   {[
-                    { name: "Basis leesrapport", price: "€89 + €0,01/woord" },
+                    { name: "Basis leesrapport", price: "€8,95 per 1000 woorden" },
                     { name: "Uitgebreid leesrapport", price: "€10,95 per 1000 woorden" },
                     { name: "Volledige eindredactie", price: "€30 per 1000 woorden" },
                     { name: "Volledig redactietraject", price: "Op aanvraag" },
