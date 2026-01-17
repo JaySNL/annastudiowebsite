@@ -41,8 +41,8 @@ export function ManuscriptServices() {
               <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-serif font-bold mb-2">Basis Leesrapport</h3>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-2xl font-bold text-primary">€89</span>
-                  <span className="text-muted-foreground ml-1 text-sm">+ €0,01/woord</span>
+                  <span className="text-2xl font-bold text-primary">€8,95</span>
+                  <span className="text-muted-foreground ml-1 text-sm">/1000 woorden</span>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">

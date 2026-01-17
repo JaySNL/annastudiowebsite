@@ -36,17 +36,15 @@ function ServiceCard({
 }: ServiceCardProps) {
   return (
     <div
-      className={`group relative h-full transition-all duration-500 hover:-translate-y-2 ${
-        featured ? "lg:scale-105" : ""
-      }`}
+      className={`group relative h-full transition-all duration-500 hover:-translate-y-2 ${featured ? "lg:scale-105" : ""
+        }`}
     >
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
       <div
-        className={`relative h-full flex flex-col glass rounded-2xl overflow-hidden shadow-soft hover:shadow-floating transition-all duration-300 ${
-          featured ? "border-2 border-primary/30" : "border border-border"
-        }`}
+        className={`relative h-full flex flex-col glass rounded-2xl overflow-hidden shadow-soft hover:shadow-floating transition-all duration-300 ${featured ? "border-2 border-primary/30" : "border border-border"
+          }`}
       >
         {/* Badge */}
         {badge && (
@@ -60,9 +58,8 @@ function ServiceCard({
 
         {/* Icon Section */}
         <div
-          className={`p-8 flex justify-center items-center ${
-            featured ? "bg-gradient-to-br from-primary/20 to-accent/20" : "bg-gradient-to-br from-muted/50 to-muted/30"
-          }`}
+          className={`p-8 flex justify-center items-center ${featured ? "bg-gradient-to-br from-primary/20 to-accent/20" : "bg-gradient-to-br from-muted/50 to-muted/30"
+            }`}
         >
           <div className="p-4 bg-background/80 backdrop-blur rounded-2xl shadow-md group-hover:scale-110 transition-transform duration-300">
             {icon}
@@ -93,11 +90,10 @@ function ServiceCard({
             {onClick ? (
               <button
                 onClick={onClick}
-                className={`group/btn w-full py-4 px-6 inline-flex justify-center items-center gap-2 text-sm font-semibold rounded-xl transition-all duration-300 ${
-                  featured
+                className={`group/btn w-full py-4 px-6 inline-flex justify-center items-center gap-2 text-sm font-semibold rounded-xl transition-all duration-300 ${featured
                     ? "bg-primary text-primary-foreground hover:bg-primary-hover shadow-md hover:shadow-lg"
                     : "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-md hover:shadow-lg"
-                }`}
+                  }`}
               >
                 {cta}
                 <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -105,11 +101,10 @@ function ServiceCard({
             ) : (
               <Link
                 href={ctaLink}
-                className={`group/btn w-full py-4 px-6 inline-flex justify-center items-center gap-2 text-sm font-semibold rounded-xl transition-all duration-300 ${
-                  featured
+                className={`group/btn w-full py-4 px-6 inline-flex justify-center items-center gap-2 text-sm font-semibold rounded-xl transition-all duration-300 ${featured
                     ? "bg-primary text-primary-foreground hover:bg-primary-hover shadow-md hover:shadow-lg"
                     : "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-md hover:shadow-lg"
-                }`}
+                  }`}
               >
                 {cta}
                 <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -179,7 +174,7 @@ export function Services() {
             icon={<FileText className="h-12 w-12 text-primary" />}
             title="Manuscript-beoordeling"
             description="Laat je manuscript beoordelen door een professional. Van basis leesrapport tot complete eindredactie."
-            price="Vanaf €89"
+            price="Vanaf €8,95/1000 woorden"
             features={[
               "Professioneel leesrapport",
               "Structuur & stijlanalyse",

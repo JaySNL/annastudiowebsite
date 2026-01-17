@@ -27,7 +27,7 @@ export function Header() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/manuscriptbeoordeling", label: "Manuscriptbeoordeling" },
-    { href: "/cursus/kort-verhaal", label: "Cursus" },
+    { href: "/cursus", label: "Cursus" },
     {
       href: "/#about",
       label: "Over Anna",
