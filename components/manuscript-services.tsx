@@ -1,6 +1,6 @@
 "use client"
 
-import { FileText, BookOpen, Sparkles, Scissors, Phone, CheckCircle } from "lucide-react"
+import { FileText, BookOpen, Sparkles, Scissors, Phone, CheckCircle, HelpCircle } from "lucide-react"
 
 export function ManuscriptServices() {
   return (
@@ -27,7 +27,7 @@ export function ManuscriptServices() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {/* Basis Leesrapport */}
+          {/* 1. Inhoudelijke redactieronde */}
           <div className="group relative h-full transition-all duration-500 hover:-translate-y-2">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
@@ -39,7 +39,7 @@ export function ManuscriptServices() {
               </div>
 
               <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-serif font-bold mb-2">Basis Leesrapport</h3>
+                <h3 className="text-xl font-serif font-bold mb-2">Inhoudelijke Redactieronde</h3>
                 <div className="flex items-baseline mb-4">
                   <span className="text-2xl font-bold text-primary">€8,95</span>
                   <span className="text-muted-foreground ml-1 text-sm">/1000 woorden</span>
@@ -47,10 +47,12 @@ export function ManuscriptServices() {
 
                 <ul className="space-y-3 mb-6 flex-grow">
                   {[
-                    "Algemene indruk manuscript",
-                    "Plot, personages & stijl",
-                    "Concrete verbeterpunten",
-                    "Leesrapport 3-4 pagina's",
+                    "Diepgaande leeservaring",
+                    "Helderheid verhaallijn",
+                    "Analyse hoofdstukopbouw",
+                    "Feedback per hoofdstuk",
+                    "Advies thema's & logica",
+                    "Geen taalcorrecties",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start text-sm">
                       <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5 mr-2" />
@@ -58,16 +60,6 @@ export function ManuscriptServices() {
                     </li>
                   ))}
                 </ul>
-
-                <div className="mb-4 p-3 bg-primary/5 rounded-lg border border-primary/10">
-                  <div className="flex items-start">
-                    <Phone className="h-4 w-4 text-primary shrink-0 mt-0.5 mr-2" />
-                    <div>
-                      <p className="text-xs font-medium">Optie: Beoordelingsgesprek</p>
-                      <p className="text-xs text-muted-foreground">1,5 uur voor €150</p>
-                    </div>
-                  </div>
-                </div>
 
                 <a
                   href="#contact"
@@ -79,7 +71,7 @@ export function ManuscriptServices() {
             </div>
           </div>
 
-          {/* Uitgebreid Leesrapport - FEATURED */}
+          {/* 2. Inhoudelijk + Spelling - POPULAIR */}
           <div className="group relative h-full lg:scale-105 transition-all duration-500 hover:-translate-y-2">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
@@ -95,7 +87,7 @@ export function ManuscriptServices() {
               </div>
 
               <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-serif font-bold mb-2">Uitgebreid Leesrapport</h3>
+                <h3 className="text-xl font-serif font-bold mb-2">Inhoudelijk + Spelling</h3>
                 <div className="flex items-baseline mb-4">
                   <span className="text-2xl font-bold text-primary">€10,95</span>
                   <span className="text-muted-foreground ml-1 text-sm">/1000 woorden</span>
@@ -103,11 +95,11 @@ export function ManuscriptServices() {
 
                 <ul className="space-y-3 mb-6 flex-grow">
                   {[
-                    "Alles uit Basis pakket",
-                    "Diepgaande analyse",
-                    "Feedback per hoofdstuk",
-                    "Rapport 6-8 pagina's",
+                    "Alles van Inhoudelijk",
                     "Spellingcontrole",
+                    "Grammaticale correcties",
+                    "Duidelijkheidsfouten",
+                    "Consistente stijl",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start text-sm">
                       <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5 mr-2" />
@@ -115,16 +107,6 @@ export function ManuscriptServices() {
                     </li>
                   ))}
                 </ul>
-
-                <div className="mb-4 p-3 bg-primary/5 rounded-lg border border-primary/10">
-                  <div className="flex items-start">
-                    <Phone className="h-4 w-4 text-primary shrink-0 mt-0.5 mr-2" />
-                    <div>
-                      <p className="text-xs font-medium">Optie: Beoordelingsgesprek</p>
-                      <p className="text-xs text-muted-foreground">1,5 uur voor €150</p>
-                    </div>
-                  </div>
-                </div>
 
                 <a
                   href="#contact"
@@ -136,15 +118,11 @@ export function ManuscriptServices() {
             </div>
           </div>
 
-          {/* Volledige Eindredactie */}
+          {/* 3. Persklaarmaken */}
           <div className="group relative h-full transition-all duration-500 hover:-translate-y-2">
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
             <div className="relative h-full flex flex-col glass rounded-2xl overflow-hidden shadow-soft hover:shadow-floating transition-all duration-300 border border-accent/20">
-              <div className="absolute top-0 right-0 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-bl-lg">
-                ADD-ON
-              </div>
-
               <div className="p-6 bg-gradient-to-br from-accent/10 to-muted/30 flex items-center justify-center">
                 <div className="p-4 bg-background/80 backdrop-blur rounded-2xl shadow-md group-hover:scale-110 transition-transform duration-300">
                   <Scissors className="h-10 w-10 text-accent-foreground" />
@@ -152,22 +130,20 @@ export function ManuscriptServices() {
               </div>
 
               <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-serif font-bold mb-2">Volledige Eindredactie</h3>
+                <h3 className="text-xl font-serif font-bold mb-2">Persklaarmaken</h3>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-2xl font-bold text-accent-foreground">€30</span>
+                  <span className="text-2xl font-bold text-accent-foreground">€15,00</span>
                   <span className="text-muted-foreground ml-1 text-sm">/1000 woorden</span>
-                </div>
-
-                <div className="bg-accent/10 border border-accent/20 rounded-lg p-3 mb-4">
-                  <p className="text-xs font-semibold text-accent-foreground">Extra bij bestaande pakketten</p>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
                   {[
-                    "Persklaarmaken manuscript",
-                    "Volledige correctieronde",
-                    "Foutloos taal & structuur",
-                    "Klaar voor uitgever",
+                    "Publicatiekwaliteit",
+                    "Consistent taalgebruik",
+                    "Indeling & bladspiegel",
+                    "Layout check",
+                    "Advies leeslogica",
+                    "Kleine ingrepen",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start text-sm">
                       <CheckCircle className="w-4 h-4 text-accent-foreground shrink-0 mt-0.5 mr-2" />
@@ -186,31 +162,36 @@ export function ManuscriptServices() {
             </div>
           </div>
 
-          {/* Volledig Redactietraject */}
+          {/* 4. Eindcorrectie */}
           <div className="group relative h-full transition-all duration-500 hover:-translate-y-2">
             <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-primary/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
             <div className="relative h-full flex flex-col glass rounded-2xl overflow-hidden shadow-soft hover:shadow-floating transition-all duration-300 border border-border">
+              <div className="absolute top-0 right-0 bg-muted text-muted-foreground text-xs font-bold px-3 py-1 rounded-bl-lg border-l border-b border-border">
+                LAATSTE CHECK
+              </div>
+
               <div className="p-6 bg-gradient-to-br from-secondary/10 to-muted/30 flex items-center justify-center">
                 <div className="p-4 bg-background/80 backdrop-blur rounded-2xl shadow-md group-hover:scale-110 transition-transform duration-300">
-                  <Sparkles className="h-10 w-10 text-secondary-foreground" />
+                  <CheckCircle className="h-10 w-10 text-secondary-foreground" />
                 </div>
               </div>
 
               <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-serif font-bold mb-2">Volledig Traject</h3>
+                <h3 className="text-xl font-serif font-bold mb-2">Eindcorrectie</h3>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-2xl font-bold text-primary">Op aanvraag</span>
+                  <span className="text-2xl font-bold text-primary">€6,95</span>
+                  <span className="text-muted-foreground ml-1 text-sm">/1000 woorden</span>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
                   {[
-                    "Alles uit Uitgebreid",
-                    "Volledige correctie",
-                    "Meerdere revisies",
-                    "Persoonlijke begeleiding",
-                    "Publicatieadvies",
-                    "Meerdere gesprekken",
+                    "Volledige spellingcheck",
+                    "Typfouten verwijderen",
+                    "Punt- en kommacorrecties",
+                    "Interpunctie & quotes",
+                    "Check afkortingen/getallen",
+                    "Technische nacontrole",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start text-sm">
                       <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5 mr-2" />
@@ -223,30 +204,57 @@ export function ManuscriptServices() {
                   href="#contact"
                   className="w-full py-3 px-4 inline-flex justify-center items-center text-sm font-semibold rounded-xl bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-md hover:shadow-lg transition-all duration-300"
                 >
-                  Offerte Aanvragen
+                  Aanvragen
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Custom packages info */}
-        <div className="mt-16 max-w-3xl mx-auto glass rounded-2xl p-8 shadow-soft border border-primary/10">
-          <h3 className="text-lg font-serif font-bold mb-3 text-center">Aangepaste Pakketten</h3>
-          <p className="text-muted-foreground mb-6 text-center">
-            Manuscript past niet in bovenstaande pakketten? Neem contact op voor een aangepast voorstel.
-          </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="text-center p-4 bg-primary/5 rounded-xl">
-              <p className="text-sm font-semibold text-foreground mb-1">Prijs per woord</p>
-              <p className="text-xs text-muted-foreground">Vanaf €0,01/woord</p>
+        {/* Adviesgesprek Add-on */}
+        <div className="mt-16 max-w-4xl mx-auto glass rounded-2xl p-8 shadow-soft border border-primary/10">
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 bg-primary/10 rounded-xl">
+                  <Phone className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-2xl font-serif font-bold">Add-on: Adviesgesprek</h3>
+              </div>
+
+              <p className="text-muted-foreground mb-4">
+                Wil je niet alleen een manuscript laten lezen, maar er actief over sparren, richting bepalen of samen keuzes maken?
+              </p>
+              <p className="text-muted-foreground mb-4">
+                We stemmen eerst via mail af wat je nodig hebt, daarna sparren we, en ik lever na afloop een korte samenvatting met concrete vervolgstappen.
+              </p>
             </div>
-            <div className="text-center p-4 bg-primary/5 rounded-xl">
-              <p className="text-sm font-semibold text-foreground mb-1">Levertijd</p>
-              <p className="text-xs text-muted-foreground">Gemiddeld 2-3 weken</p>
+
+            <div className="flex-shrink-0 w-full md:w-auto flex flex-col gap-4">
+              <div className="p-4 bg-background/50 rounded-xl border border-primary/10 min-w-[250px]">
+                <div className="flex justify-between items-center mb-1">
+                  <span className="font-semibold">60 min advies</span>
+                  <span className="text-lg font-bold text-primary">€135</span>
+                </div>
+                <p className="text-xs text-muted-foreground">Exclusief btw</p>
+              </div>
+
+              <div className="p-4 bg-background/50 rounded-xl border border-primary/10 min-w-[250px] relative overflow-hidden">
+                <div className="absolute right-0 top-0 bg-accent/20 text-accent-foreground text-[10px] font-bold px-2 py-0.5 rounded-bl">POPULAIR</div>
+                <div className="flex justify-between items-center mb-1">
+                  <span className="font-semibold">90 min advies</span>
+                  <span className="text-lg font-bold text-primary">€195</span>
+                </div>
+                <p className="text-xs text-muted-foreground">Exclusief btw</p>
+              </div>
+
+              <a href="#contact" className="text-center text-sm font-semibold text-primary hover:underline mt-2">
+                Direct een gesprek inplannen &rarr;
+              </a>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   )
