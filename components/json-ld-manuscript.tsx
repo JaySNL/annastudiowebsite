@@ -20,7 +20,7 @@ export function JsonLdManuscript() {
       offers: [
         {
           "@type": "Offer",
-          name: "Basis Leesrapport",
+          name: "Inhoudelijke Redactieronde",
           description: "Algemene indruk van je manuscript met concrete verbeterpunten en suggesties.",
           price: "8.95",
           priceCurrency: "EUR",
@@ -39,12 +39,12 @@ export function JsonLdManuscript() {
         },
         {
           "@type": "Offer",
-          name: "Basis Leesrapport met Beoordelingsgesprek",
+          name: "Inhoudelijke Redactieronde met Beoordelingsgesprek",
           description:
             "Algemene indruk van je manuscript met concrete verbeterpunten en suggesties, plus een 1,5 uur durend beoordelingsgesprek.",
           priceSpecification: {
             "@type": "CompoundPriceSpecification",
-            description: "Basis leesrapport plus optioneel beoordelingsgesprek",
+            description: "Inhoudelijke redactieronde plus optioneel beoordelingsgesprek",
             price: "8.95",
             priceCurrency: "EUR",
             priceComponent: [
@@ -72,7 +72,7 @@ export function JsonLdManuscript() {
         },
         {
           "@type": "Offer",
-          name: "Uitgebreid Leesrapport",
+          name: "Inhoudelijk + Spelling",
           description:
             "Diepgaande analyse van structuur en opbouw, feedback per hoofdstuk en globale spellingcontrole.",
           price: "10.95",
@@ -92,12 +92,12 @@ export function JsonLdManuscript() {
         },
         {
           "@type": "Offer",
-          name: "Uitgebreid Leesrapport met Beoordelingsgesprek",
+          name: "Inhoudelijk + Spelling met Beoordelingsgesprek",
           description:
             "Diepgaande analyse van structuur en opbouw, feedback per hoofdstuk en globale spellingcontrole, plus een 1,5 uur durend beoordelingsgesprek.",
           priceSpecification: {
             "@type": "CompoundPriceSpecification",
-            description: "Uitgebreid leesrapport plus optioneel beoordelingsgesprek",
+            description: "Inhoudelijk + spelling plus optioneel beoordelingsgesprek",
             price: "10.95",
             priceCurrency: "EUR",
             priceComponent: [

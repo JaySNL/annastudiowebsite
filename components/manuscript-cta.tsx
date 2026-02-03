@@ -9,9 +9,8 @@ export function ManuscriptCta() {
     email: "",
     manuscriptType: "",
     wordCount: "",
-    packageType: "",
-    includeCall: false,
-    includeEndEdit: false,
+    selectedPackages: [] as string[],
+    consultationType: "none", // "none", "60min", "90min"
     message: "",
   })
 
@@ -24,33 +23,29 @@ export function ManuscriptCta() {
   // Get package description
   const getPackageDescription = (packageType: string) => {
     const descriptions: Record<string, string[]> = {
-      basis: [
-        "Algemene indruk van je manuscript",
-        "Beoordeling van plot, personages en stijl",
-        "Concrete verbeterpunten en suggesties",
-        "Leesrapport van 3-4 pagina's",
+      "inhoudelijke-redactie": [
+        "Inhoudelijke Redactieronde",
+        "Diepgaande leeservaring",
+        "Helderheid verhaallijn",
+        "Analyse hoofdstukopbouw",
       ],
-      uitgebreid: [
-        "Alles uit het Basis Leesrapport",
-        "Diepgaande analyse van structuur en opbouw",
-        "Feedback per hoofdstuk of sectie",
-        "Uitgebreid leesrapport van 6-8 pagina's",
-        "Gedetailleerde spellingcontrole",
+      "inhoudelijk-spelling": [
+        "Inhoudelijk + Spelling",
+        "Alles van Inhoudelijk",
+        "Spellingcontrole",
+        "Grammaticale correcties",
       ],
-      "volledige-eindredactie": [
-        "Persklaarmaken van je manuscript",
-        "Volledige correctieronde",
-        "Foutloos manuscript qua taal en zinsstructuur",
-        "Klaar om naar uitgever te sturen of zelfpublicatie",
+      persklaarmaken: [
+        "Persklaarmaken",
+        "Publicatiekwaliteit",
+        "Consistent taalgebruik",
+        "Indeling & bladspiegel",
       ],
-      volledig: [
-        "Alles uit het Uitgebreide Leesrapport",
-        "Volledige spellingcontrole en taalcorrectie",
-        "Meerdere revisierondes mogelijk",
-        "Persoonlijke begeleiding tijdens het herschrijven",
-        "Advies over uitgeven en publicatiemogelijkheden",
-        "Onbeperkt e-mailcontact gedurende het traject",
-        "Meerdere uitgebreide beoordelingsgesprekken inbegrepen",
+      eindcorrectie: [
+        "Eindcorrectie",
+        "Volledige spellingcheck",
+        "Typfouten verwijderen",
+        "Punt- en kommacorrecties",
       ],
     }
     return descriptions[packageType] || []
@@ -58,7 +53,7 @@ export function ManuscriptCta() {
 
   // Calculate estimated price whenever relevant form fields change
   useEffect(() => {
-    if (!formData.wordCount || !formData.packageType || formData.wordCount === "0") {
+    if (!formData.wordCount || formData.selectedPackages.length === 0 || formData.wordCount === "0") {
       setEstimatedPrice(null)
       setPackageSummary([])
       return
@@ -71,50 +66,42 @@ export function ManuscriptCta() {
       return
     }
 
-    // Get base package description
-    const summary = [...getPackageDescription(formData.packageType)]
+    let totalPrice = 0
+    const summary: string[] = []
 
-    // Calculate price based on package type and word count
-    let manuscriptPrice = 0
+    // Calculate price for selected packages
+    formData.selectedPackages.forEach((pkg) => {
+      let pricePer1000 = 0
+      switch (pkg) {
+        case "inhoudelijke-redactie":
+          pricePer1000 = 8.95
+          break
+        case "inhoudelijk-spelling":
+          pricePer1000 = 10.95
+          break
+        case "persklaarmaken":
+          pricePer1000 = 15.0
+          break
+        case "eindcorrectie":
+          pricePer1000 = 6.95
+          break
+      }
+      totalPrice += (wordCount / 1000) * pricePer1000
+      summary.push(...getPackageDescription(pkg))
+    })
 
-    if (formData.packageType === "basis") {
-      manuscriptPrice = (wordCount / 1000) * 8.95
-    } else if (formData.packageType === "uitgebreid") {
-      manuscriptPrice = (wordCount / 1000) * 10.95
-    } else if (formData.packageType === "volledige-eindredactie") {
-      manuscriptPrice = (wordCount / 1000) * 30
-    } else if (formData.packageType === "volledig") {
-      setEstimatedPrice("Prijs op aanvraag")
-      setPackageSummary(summary)
-      return
-    } else {
-      setEstimatedPrice(null)
-      setPackageSummary([])
-      return
+    // Add consultation price
+    if (formData.consultationType === "60min") {
+      totalPrice += 135
+      summary.push("Adviesgesprek (60 min)")
+    } else if (formData.consultationType === "90min") {
+      totalPrice += 195
+      summary.push("Adviesgesprek (90 min)")
     }
-
-    // Add call price if selected
-    const callPrice = formData.includeCall ? 150 : 0
-    if (formData.includeCall) {
-      summary.push("Beoordelingsgesprek van 1,5 uur")
-    }
-
-    // Add eindredactie if selected
-    const endEditPrice =
-      formData.includeEndEdit && (formData.packageType === "basis" || formData.packageType === "uitgebreid")
-        ? (wordCount / 1000) * 30
-        : 0
-
-    if (formData.includeEndEdit && (formData.packageType === "basis" || formData.packageType === "uitgebreid")) {
-      summary.push("Volledige eindredactie (persklaarmaken + correctieronde)")
-    }
-
-    // Calculate total price
-    const totalPrice = manuscriptPrice + callPrice + endEditPrice
 
     setEstimatedPrice(`€${totalPrice.toFixed(2)}`)
-    setPackageSummary(summary)
-  }, [formData.wordCount, formData.packageType, formData.includeCall, formData.includeEndEdit])
+    setPackageSummary([...new Set(summary)]) // Remove duplicates if any
+  }, [formData.wordCount, formData.selectedPackages, formData.consultationType])
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -124,11 +111,20 @@ export function ManuscriptCta() {
     }))
   }
 
-  const handleCheckboxChange = (e) => {
-    const { name, checked } = e.target
+  const handlePackageChange = (e) => {
+    const { value, checked } = e.target
+    setFormData((prev) => {
+      const newPackages = checked
+        ? [...prev.selectedPackages, value]
+        : prev.selectedPackages.filter((pkg) => pkg !== value)
+      return { ...prev, selectedPackages: newPackages }
+    })
+  }
+
+  const handleConsultationChange = (e) => {
     setFormData((prev) => ({
       ...prev,
-      [name]: checked,
+      consultationType: e.target.value,
     }))
   }
 
@@ -138,23 +134,20 @@ export function ManuscriptCta() {
     setSubmitError(null)
 
     try {
-      let packageDisplay = ""
-      switch (formData.packageType) {
-        case "basis":
-          packageDisplay = "Basis Leesrapport"
-          break
-        case "uitgebreid":
-          packageDisplay = "Uitgebreid Leesrapport"
-          break
-        case "volledige-eindredactie":
-          packageDisplay = "Volledige Eindredactie (alleen)"
-          break
-        case "volledig":
-          packageDisplay = "Volledig Redactietraject"
-          break
-        default:
-          packageDisplay = formData.packageType
+      const packageNames = {
+        "inhoudelijke-redactie": "Inhoudelijke Redactieronde",
+        "inhoudelijk-spelling": "Inhoudelijk + Spelling",
+        persklaarmaken: "Persklaarmaken",
+        eindcorrectie: "Eindcorrectie",
       }
+
+      const selectedPackageNames = formData.selectedPackages
+        .map((pkg) => packageNames[pkg] || pkg)
+        .join(", ")
+
+      let consultationDisplay = "Geen"
+      if (formData.consultationType === "60min") consultationDisplay = "60 min (€135)"
+      if (formData.consultationType === "90min") consultationDisplay = "90 min (€195)"
 
       const htmlContent = `
       <h2>Nieuwe manuscriptbeoordeling aanvraag</h2>
@@ -162,9 +155,8 @@ export function ManuscriptCta() {
       <p><strong>Email:</strong> ${formData.email}</p>
       <p><strong>Type manuscript:</strong> ${formData.manuscriptType}</p>
       <p><strong>Aantal woorden:</strong> ${formData.wordCount}</p>
-      <p><strong>Gewenst pakket:</strong> ${packageDisplay}</p>
-      <p><strong>Beoordelingsgesprek:</strong> ${formData.includeCall ? "Ja (+€150)" : "Nee"}</p>
-      <p><strong>Volledige eindredactie add-on:</strong> ${formData.includeEndEdit ? `Ja (+€${((Number.parseInt(formData.wordCount) / 1000) * 30).toFixed(2)})` : "Nee"}</p>
+      <p><strong>Geselecteerde pakketten:</strong> ${selectedPackageNames}</p>
+      <p><strong>Adviesgesprek:</strong> ${consultationDisplay}</p>
       <p><strong>Geschatte prijs:</strong> ${estimatedPrice || "Niet berekend"}</p>
       <p><strong>Wat is inbegrepen:</strong></p>
       <ul>
@@ -191,9 +183,8 @@ export function ManuscriptCta() {
               email: "",
               manuscriptType: "",
               wordCount: "",
-              packageType: "",
-              includeCall: false,
-              includeEndEdit: false,
+              selectedPackages: [],
+              consultationType: "none",
               message: "",
             })
             setEstimatedPrice(null)
@@ -215,9 +206,8 @@ export function ManuscriptCta() {
               email: "",
               manuscriptType: "",
               wordCount: "",
-              packageType: "",
-              includeCall: false,
-              includeEndEdit: false,
+              selectedPackages: [],
+              consultationType: "none",
               message: "",
             })
             setEstimatedPrice(null)
@@ -248,8 +238,7 @@ export function ManuscriptCta() {
                 Vul het formulier in en ik neem binnen 24 uur contact met je op om de mogelijkheden te bespreken.
               </p>
               <p className="text-sm text-muted-foreground mt-2">
-                Basis leesrapport: €8,95 per 1000 woorden | Uitgebreid leesrapport: €10,95 per 1000 woorden | Volledige
-                eindredactie: €30 per 1000 woorden
+                Kies één of meerdere diensten. De prijs wordt direct berekend.
               </p>
             </div>
 
@@ -382,71 +371,126 @@ export function ManuscriptCta() {
               </div>
 
               <div className="md:col-span-2">
-                <label htmlFor="packageType" className="block text-sm font-medium text-foreground mb-2">
-                  Gewenst pakket <span className="text-primary">*</span>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Gewenste diensten (meerdere opties mogelijk) <span className="text-primary">*</span>
                 </label>
-                <select
-                  id="packageType"
-                  name="packageType"
-                  value={formData.packageType}
-                  onChange={handleChange}
-                  className="w-full p-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
-                  required
-                >
-                  <option value="">Selecteer pakket</option>
-                  <option value="basis">Basis Leesrapport (€8,95 per 1000 woorden)</option>
-                  <option value="uitgebreid">Uitgebreid Leesrapport (€10,95 per 1000 woorden)</option>
-                  <option value="volledige-eindredactie">Volledige Eindredactie (€30 per 1000 woorden - alleen)</option>
-                  <option value="volledig">Volledig Redactietraject (op aanvraag)</option>
-                </select>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex items-start p-3 border border-border rounded-lg bg-card/50">
+                    <input
+                      type="checkbox"
+                      id="pkg-inhoudelijk"
+                      value="inhoudelijke-redactie"
+                      checked={formData.selectedPackages.includes("inhoudelijke-redactie")}
+                      onChange={handlePackageChange}
+                      className="mt-1 mr-3 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                    />
+                    <div>
+                      <label htmlFor="pkg-inhoudelijk" className="font-medium text-foreground cursor-pointer">
+                        Inhoudelijke Redactieronde
+                      </label>
+                      <p className="text-xs text-muted-foreground">€8,95 per 1000 woorden</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start p-3 border border-border rounded-lg bg-card/50">
+                    <input
+                      type="checkbox"
+                      id="pkg-inhoudelijk-spelling"
+                      value="inhoudelijk-spelling"
+                      checked={formData.selectedPackages.includes("inhoudelijk-spelling")}
+                      onChange={handlePackageChange}
+                      className="mt-1 mr-3 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                    />
+                    <div>
+                      <label htmlFor="pkg-inhoudelijk-spelling" className="font-medium text-foreground cursor-pointer">
+                        Inhoudelijk + Spelling
+                      </label>
+                      <p className="text-xs text-muted-foreground">€10,95 per 1000 woorden</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start p-3 border border-border rounded-lg bg-card/50">
+                    <input
+                      type="checkbox"
+                      id="pkg-persklaar"
+                      value="persklaarmaken"
+                      checked={formData.selectedPackages.includes("persklaarmaken")}
+                      onChange={handlePackageChange}
+                      className="mt-1 mr-3 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                    />
+                    <div>
+                      <label htmlFor="pkg-persklaar" className="font-medium text-foreground cursor-pointer">
+                        Persklaarmaken
+                      </label>
+                      <p className="text-xs text-muted-foreground">€15,00 per 1000 woorden</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start p-3 border border-border rounded-lg bg-card/50">
+                    <input
+                      type="checkbox"
+                      id="pkg-eindcorrectie"
+                      value="eindcorrectie"
+                      checked={formData.selectedPackages.includes("eindcorrectie")}
+                      onChange={handlePackageChange}
+                      className="mt-1 mr-3 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                    />
+                    <div>
+                      <label htmlFor="pkg-eindcorrectie" className="font-medium text-foreground cursor-pointer">
+                        Eindcorrectie
+                      </label>
+                      <p className="text-xs text-muted-foreground">€6,95 per 1000 woorden</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Call option checkbox */}
-              {(formData.packageType === "basis" || formData.packageType === "uitgebreid") && (
-                <>
-                  <div className="md:col-span-2 bg-primary/5 p-4 rounded-lg border border-primary/10">
-                    <div className="flex items-start">
+              {/* Consultation options */}
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Add-on: Adviesgesprek
+                </label>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className={`p-3 border rounded-lg cursor-pointer transition-colors ${formData.consultationType === 'none' ? 'border-primary bg-primary/5' : 'border-border'}`} onClick={() => setFormData(prev => ({ ...prev, consultationType: 'none' }))}>
+                    <div className="flex items-center">
                       <input
-                        type="checkbox"
-                        id="includeCall"
-                        name="includeCall"
-                        checked={formData.includeCall}
-                        onChange={handleCheckboxChange}
-                        className="mt-1 mr-3 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                        type="radio"
+                        name="consultation"
+                        value="none"
+                        checked={formData.consultationType === "none"}
+                        onChange={handleConsultationChange}
+                        className="mr-2 h-4 w-4 border-gray-300 text-primary focus:ring-primary"
                       />
-                      <div>
-                        <label htmlFor="includeCall" className="font-medium text-foreground">
-                          Beoordelingsgesprek toevoegen (+€150)
-                        </label>
-                        <p className="text-sm text-muted-foreground mt-1">
-                          Een 1,5 uur durend gesprek waarin we je manuscript en de feedback in detail bespreken
-                        </p>
-                      </div>
+                      <span className="font-medium">Geen</span>
                     </div>
                   </div>
 
-                  <div className="md:col-span-2 bg-accent/5 p-4 rounded-lg border border-accent/10">
-                    <div className="flex items-start">
+                  <div className={`p-3 border rounded-lg cursor-pointer transition-colors ${formData.consultationType === '60min' ? 'border-primary bg-primary/5' : 'border-border'}`} onClick={() => setFormData(prev => ({ ...prev, consultationType: '60min' }))}>
+                    <div className="flex items-center">
                       <input
-                        type="checkbox"
-                        id="includeEndEdit"
-                        name="includeEndEdit"
-                        checked={formData.includeEndEdit}
-                        onChange={handleCheckboxChange}
-                        className="mt-1 mr-3 h-4 w-4 rounded border-gray-300 text-accent-foreground focus:ring-accent"
+                        type="radio"
+                        name="consultation"
+                        value="60min"
+                        checked={formData.consultationType === "60min"}
+                        onChange={handleConsultationChange}
+                        className="mr-2 h-4 w-4 border-gray-300 text-primary focus:ring-primary"
                       />
-                      <div>
-                        <label htmlFor="includeEndEdit" className="font-medium text-foreground">
-                          Volledige Eindredactie toevoegen (+€30 per 1000 woorden)
-                        </label>
-                        <p className="text-sm text-muted-foreground mt-1">
-                          Persklaarmaken, correctieronde en foutloos manuscript voor uitgever of zelfpublicatie
-                        </p>
-                      </div>
+                      <span className="font-medium">60 min (€135)</span>
                     </div>
                   </div>
-                </>
-              )}
+
+                  <div className={`p-3 border rounded-lg cursor-pointer transition-colors ${formData.consultationType === '90min' ? 'border-primary bg-primary/5' : 'border-border'}`} onClick={() => setFormData(prev => ({ ...prev, consultationType: '90min' }))}>
+                    <div className="flex items-center">
+                      <input
+                        type="radio"
+                        name="consultation"
+                        value="90min"
+                        checked={formData.consultationType === "90min"}
+                        onChange={handleConsultationChange}
+                        className="mr-2 h-4 w-4 border-gray-300 text-primary focus:ring-primary"
+                      />
+                      <span className="font-medium">90 min (€195)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               {/* Price estimate with package summary */}
               {estimatedPrice && packageSummary.length > 0 && (

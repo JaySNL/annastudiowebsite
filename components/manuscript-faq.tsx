@@ -10,7 +10,7 @@ export function ManuscriptFaq() {
     {
       question: "Hoe lang duurt een manuscriptbeoordeling?",
       answer:
-        "De doorlooptijd hangt af van de lengte van je manuscript en het gekozen pakket. Voor een basis leesrapport kun je rekenen op 1-2 weken, voor een uitgebreid leesrapport op 2-3 weken. Bij een volledig redactietraject maken we samen een planning op maat.",
+        "De doorlooptijd hangt af van de lengte van je manuscript en het gekozen pakket. Voor een Inhoudelijke Redactieronde kun je rekenen op 1-2 weken, voor Inhoudelijk + Spelling op 2-3 weken. Bij een volledig redactietraject maken we samen een planning op maat.",
     },
     {
       question: "Wat is het verschil tussen een manuscriptbeoordeling en redactie?",
@@ -60,15 +60,13 @@ export function ManuscriptFaq() {
               >
                 <h3 className="font-medium text-foreground">{faq.question}</h3>
                 <ChevronDown
-                  className={`h-5 w-5 text-muted-foreground transition-transform ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
+                  className={`h-5 w-5 text-muted-foreground transition-transform ${openIndex === index ? "rotate-180" : ""
+                    }`}
                 />
               </button>
               <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? "max-h-96 pb-6 px-6" : "max-h-0"
-                }`}
+                className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-96 pb-6 px-6" : "max-h-0"
+                  }`}
               >
                 <p className="text-muted-foreground">{faq.answer}</p>
               </div>
