@@ -103,6 +103,7 @@ export function ManuscriptHero() {
                     { name: "Inhoudelijk + Spelling", price: "€10,95 per 1000 woorden" },
                     { name: "Persklaarmaken", price: "€15,00 per 1000 woorden" },
                     { name: "Eindcorrectie", price: "€6,95 per 1000 woorden" },
+                    { name: "Volledig redactietraject", price: "Op aanvraag" },
                   ].map((item, index) => (
                     <div
                       key={index}

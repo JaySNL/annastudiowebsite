@@ -47,6 +47,12 @@ export function ManuscriptCta() {
         "Typfouten verwijderen",
         "Punt- en kommacorrecties",
       ],
+      volledig: [
+        "Volledig Redactietraject",
+        "Persoonlijke begeleiding",
+        "Meerdere feedbackrondes",
+        "Advies op maat",
+      ],
     }
     return descriptions[packageType] || []
   }
@@ -85,10 +91,20 @@ export function ManuscriptCta() {
         case "eindcorrectie":
           pricePer1000 = 6.95
           break
+        case "volledig":
+          pricePer1000 = 0 // Will display as "Prijs op aanvraag"
+          break
       }
       totalPrice += (wordCount / 1000) * pricePer1000
       summary.push(...getPackageDescription(pkg))
     })
+
+    // If 'volledig' is selected, override price to display "Prijs op aanvraag"
+    if (formData.selectedPackages.includes("volledig")) {
+      setEstimatedPrice("Prijs op aanvraag")
+      setPackageSummary([...new Set(summary)])
+      return
+    }
 
     // Add consultation price
     if (formData.consultationType === "60min") {
@@ -139,6 +155,7 @@ export function ManuscriptCta() {
         "inhoudelijk-spelling": "Inhoudelijk + Spelling",
         persklaarmaken: "Persklaarmaken",
         eindcorrectie: "Eindcorrectie",
+        volledig: "Volledig Redactietraject",
       }
 
       const selectedPackageNames = formData.selectedPackages
@@ -437,6 +454,22 @@ export function ManuscriptCta() {
                         Eindcorrectie
                       </label>
                       <p className="text-xs text-muted-foreground">€6,95 per 1000 woorden</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start p-3 border border-border rounded-lg bg-card/50 md:col-span-2">
+                    <input
+                      type="checkbox"
+                      id="pkg-volledig"
+                      value="volledig"
+                      checked={formData.selectedPackages.includes("volledig")}
+                      onChange={handlePackageChange}
+                      className="mt-1 mr-3 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                    />
+                    <div>
+                      <label htmlFor="pkg-volledig" className="font-medium text-foreground cursor-pointer">
+                        Volledig Redactietraject
+                      </label>
+                      <p className="text-xs text-muted-foreground">Prijs op aanvraag</p>
                     </div>
                   </div>
                 </div>
