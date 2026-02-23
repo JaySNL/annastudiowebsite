@@ -166,7 +166,8 @@ export function ManuscriptCta() {
       if (formData.consultationType === "60min") consultationDisplay = "60 min (€135)"
       if (formData.consultationType === "90min") consultationDisplay = "90 min (€195)"
 
-      const htmlContent = `
+      const timestamp = new Date().toLocaleString("nl-NL", { timeZone: "Europe/Amsterdam" })
+      const formHtml = `
       <h2>Nieuwe manuscriptbeoordeling aanvraag</h2>
       <p><strong>Naam:</strong> ${formData.name}</p>
       <p><strong>Email:</strong> ${formData.email}</p>
@@ -183,10 +184,25 @@ export function ManuscriptCta() {
       <p>${formData.message ? formData.message.replace(/\n/g, "<br>") : "Geen toelichting"}</p>
     `
 
+      const htmlContent = `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; line-height: 1.6;">
+          <p>Beste ${formData.name},</p>
+          <p>Bedankt voor je bericht! Dit is de bevestiging van je contactformulier. Ik neem zo snel mogelijk contact met je op om je schrijftraject te bespreken.</p>
+          <br>
+          <p>Met vriendelijke groet,<br><br>Anna<br>AnnaStudio.nl</p>
+          <br>
+          <hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">
+          <p><strong>Verzonden op ${timestamp} (CET/CEST):</strong></p>
+          <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
+            ${formHtml}
+          </div>
+        </div>
+      `
+
       try {
         const result = await sendEmail({
           to: formData.email,
-          cc: "info@annastudio.nl, annastrijbos11@gmail.com",
+          bcc: "info@annastudio.nl, annastrijbos11@gmail.com",
           subject: `Bevestiging manuscriptbeoordeling aanvraag: ${formData.manuscriptType}`,
           html: htmlContent,
           replyTo: "info@annastudio.nl",

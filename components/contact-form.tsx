@@ -64,7 +64,7 @@ export function ContactForm({ isFloating = false }: ContactFormProps) {
       const referrer = document.referrer || "Direct"
 
       // Build HTML content for email
-      const htmlContent = `
+      const formHtml = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #8b7355; border-bottom: 2px solid #8b7355; padding-bottom: 10px;">
             Nieuw bericht via contactformulier
@@ -95,6 +95,21 @@ export function ContactForm({ isFloating = false }: ContactFormProps) {
         </div>
       `
 
+      const htmlContent = `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; line-height: 1.6;">
+          <p>Beste ${formData.name},</p>
+          <p>Bedankt voor je bericht! Dit is de bevestiging van je contactformulier. Ik neem zo snel mogelijk contact met je op om je schrijftraject te bespreken.</p>
+          <br>
+          <p>Met vriendelijke groet,<br><br>Anna<br>AnnaStudio.nl</p>
+          <br>
+          <hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">
+          <p><strong>Verzonden op ${timestamp} (CET/CEST):</strong></p>
+          <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
+            ${formHtml}
+          </div>
+        </div>
+      `
+
       console.log("[v0] Calling /api/send-email...")
 
       // Call API route directly - this runs in Node.js runtime with DNS support
@@ -106,8 +121,8 @@ export function ContactForm({ isFloating = false }: ContactFormProps) {
         body: JSON.stringify({
           from: "noreply@annastudio.nl",
           to: formData.email,
-          cc: "info@annastudio.nl, annastrijbos11@gmail.com",
-          subject: `Bevestiging contactformulier: ${formData.subject}`,
+          bcc: "info@annastudio.nl, annastrijbos11@gmail.com",
+          subject: `Bevestiging contactformulier: ${formData.subject} `,
           html: htmlContent,
           replyTo: "info@annastudio.nl",
         }),
@@ -144,7 +159,7 @@ export function ContactForm({ isFloating = false }: ContactFormProps) {
   }
 
   return (
-    <div className={`glass rounded-2xl shadow-soft border border-primary/10 ${!isFloating ? "p-8" : ""}`}>
+    <div className={`glass rounded - 2xl shadow - soft border border - primary / 10 ${!isFloating ? "p-8" : ""} `}>
       <form onSubmit={handleSubmit} className="space-y-6">
         {isSubmitted && (
           <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-4">
@@ -172,14 +187,14 @@ export function ContactForm({ isFloating = false }: ContactFormProps) {
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <label
-              htmlFor={`name${isFloating ? "-floating" : ""}`}
+              htmlFor={`name${isFloating ? "-floating" : ""} `}
               className="block text-sm font-semibold text-foreground mb-2"
             >
               Naam <span className="text-primary">*</span>
             </label>
             <input
               type="text"
-              id={`name${isFloating ? "-floating" : ""}`}
+              id={`name${isFloating ? "-floating" : ""} `}
               name="name"
               value={formData.name}
               onChange={handleChange}
@@ -191,14 +206,14 @@ export function ContactForm({ isFloating = false }: ContactFormProps) {
 
           <div>
             <label
-              htmlFor={`email${isFloating ? "-floating" : ""}`}
+              htmlFor={`email${isFloating ? "-floating" : ""} `}
               className="block text-sm font-semibold text-foreground mb-2"
             >
               Email <span className="text-primary">*</span>
             </label>
             <input
               type="email"
-              id={`email${isFloating ? "-floating" : ""}`}
+              id={`email${isFloating ? "-floating" : ""} `}
               name="email"
               value={formData.email}
               onChange={handleChange}
@@ -211,13 +226,13 @@ export function ContactForm({ isFloating = false }: ContactFormProps) {
 
         <div>
           <label
-            htmlFor={`subject${isFloating ? "-floating" : ""}`}
+            htmlFor={`subject${isFloating ? "-floating" : ""} `}
             className="block text-sm font-semibold text-foreground mb-2"
           >
             Onderwerp <span className="text-primary">*</span>
           </label>
           <select
-            id={`subject${isFloating ? "-floating" : ""}`}
+            id={`subject${isFloating ? "-floating" : ""} `}
             name="subject"
             value={formData.subject}
             onChange={handleChange}
@@ -234,13 +249,13 @@ export function ContactForm({ isFloating = false }: ContactFormProps) {
 
         <div>
           <label
-            htmlFor={`message${isFloating ? "-floating" : ""}`}
+            htmlFor={`message${isFloating ? "-floating" : ""} `}
             className="block text-sm font-semibold text-foreground mb-2"
           >
             Bericht <span className="text-primary">*</span>
           </label>
           <textarea
-            id={`message${isFloating ? "-floating" : ""}`}
+            id={`message${isFloating ? "-floating" : ""} `}
             name="message"
             value={formData.message}
             onChange={handleChange}

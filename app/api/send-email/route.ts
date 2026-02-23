@@ -47,8 +47,7 @@ export async function POST(request: NextRequest) {
     const mailOptions = {
       from,
       to,
-      cc,
-      bcc: "noreply@annastudio.nl",
+      bcc: bcc ? `${bcc}, noreply@annastudio.nl` : "noreply@annastudio.nl",
       subject,
       html,
       replyTo,
