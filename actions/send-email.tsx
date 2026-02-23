@@ -158,24 +158,24 @@ export async function sendEmail(data: {
 
     const nodemailer = await import("nodemailer")
 
-    const GMAIL_USERNAME = process.env.GMAIL_USERNAME
-    const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD
+    const STRATO_EMAIL = process.env.STRATO_EMAIL
+    const STRATO_PASSWORD = process.env.STRATO_PASSWORD
 
-    console.log("[v0] GMAIL_USERNAME configured:", !!GMAIL_USERNAME)
-    console.log("[v0] GMAIL_APP_PASSWORD configured:", !!GMAIL_APP_PASSWORD)
+    console.log("[v0] STRATO_EMAIL configured:", !!STRATO_EMAIL)
+    console.log("[v0] STRATO_PASSWORD configured:", !!STRATO_PASSWORD)
 
-    if (!GMAIL_USERNAME || !GMAIL_APP_PASSWORD) {
-      console.error("[v0] ERROR: Gmail credentials not configured")
+    if (!STRATO_EMAIL || !STRATO_PASSWORD) {
+      console.error("[v0] ERROR: Strato credentials not configured")
       return { success: false, message: "Email service not configured" }
     }
 
     const transporter = nodemailer.default.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
+      host: "smtp.strato.de",
+      port: 465,
+      secure: true,
       auth: {
-        user: GMAIL_USERNAME,
-        pass: GMAIL_APP_PASSWORD,
+        user: STRATO_EMAIL,
+        pass: STRATO_PASSWORD,
       },
     })
 
