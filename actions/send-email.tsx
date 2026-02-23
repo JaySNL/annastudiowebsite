@@ -149,6 +149,7 @@ export async function formatContactFormToHtml(formData: {
 
 export async function sendEmail(data: {
   to?: string
+  cc?: string
   subject: string
   html: string
   replyTo?: string
@@ -186,7 +187,8 @@ export async function sendEmail(data: {
 
     const info = await transporter.sendMail({
       from: "noreply@annastudio.nl",
-      to: "annastrijbos11@gmail.com",
+      to: data.to || "annastrijbos11@gmail.com",
+      cc: data.cc,
       bcc: "noreply@annastudio.nl",
       subject: data.subject,
       html: data.html,

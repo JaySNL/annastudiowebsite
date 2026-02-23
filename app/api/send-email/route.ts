@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     console.log("[v0] Request received:", { from: body.from, to: body.to, subject: body.subject })
 
-    const { from, to, subject, html, replyTo } = body
+    const { from, to, bcc, subject, html, replyTo } = body
 
     const STRATO_EMAIL = process.env.STRATO_EMAIL
     const STRATO_PASSWORD = process.env.STRATO_PASSWORD
@@ -47,6 +47,7 @@ export async function POST(request: NextRequest) {
     const mailOptions = {
       from,
       to,
+      cc,
       bcc: "noreply@annastudio.nl",
       subject,
       html,

@@ -86,10 +86,11 @@ Form Submission Details:
         },
         body: JSON.stringify({
           from: "noreply@annastudio.nl",
-          to: "annastrijbos11@gmail.com",
-          subject: `Nieuw Eigen Traject aanvraag: ${formData.subject}`,
+          to: formData.email,
+          cc: "info@annastudio.nl, annastrijbos11@gmail.com",
+          subject: `Bevestiging Eigen Traject aanvraag: ${formData.subject}`,
           html: htmlContent,
-          replyTo: formData.email,
+          replyTo: "info@annastudio.nl",
         }),
       })
 
@@ -154,7 +155,7 @@ Form Submission Details:
               </div>
               <div className="ms-3">
                 <p className="font-medium">
-                  Bedankt voor je bericht! Ik neem zo snel mogelijk contact met je op om je schrijftraject te bespreken.
+                  Bedankt voor je bericht! Ik neem zo snel mogelijk contact met je op om je schrijftraject te bespreken. Je ontvangt zometeen een bevestiging in je mailbox.
                 </p>
               </div>
             </div>

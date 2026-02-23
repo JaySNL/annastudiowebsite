@@ -18,7 +18,7 @@ export function ManuscriptCta() {
   const [packageSummary, setPackageSummary] = useState<string[]>([])
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const [submitError, setSubmitError] = useState(null)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   // Get package description
   const getPackageDescription = (packageType: string) => {
@@ -119,7 +119,7 @@ export function ManuscriptCta() {
     setPackageSummary([...new Set(summary)]) // Remove duplicates if any
   }, [formData.wordCount, formData.selectedPackages, formData.consultationType])
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({
       ...prev,
@@ -127,7 +127,7 @@ export function ManuscriptCta() {
     }))
   }
 
-  const handlePackageChange = (e) => {
+  const handlePackageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target
     setFormData((prev) => {
       const newPackages = checked
@@ -137,20 +137,20 @@ export function ManuscriptCta() {
     })
   }
 
-  const handleConsultationChange = (e) => {
+  const handleConsultationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({
       ...prev,
       consultationType: e.target.value,
     }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitError(null)
 
     try {
-      const packageNames = {
+      const packageNames: Record<string, string> = {
         "inhoudelijke-redactie": "Inhoudelijke Redactieronde",
         "inhoudelijk-spelling": "Inhoudelijk + Spelling",
         persklaarmaken: "Persklaarmaken",
@@ -185,10 +185,11 @@ export function ManuscriptCta() {
 
       try {
         const result = await sendEmail({
-          to: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "anna@annasschrijfstudio.nl",
-          subject: `Nieuwe manuscriptbeoordeling aanvraag: ${formData.manuscriptType}`,
+          to: formData.email,
+          cc: "info@annastudio.nl, annastrijbos11@gmail.com",
+          subject: `Bevestiging manuscriptbeoordeling aanvraag: ${formData.manuscriptType}`,
           html: htmlContent,
-          replyTo: formData.email,
+          replyTo: "info@annastudio.nl",
         })
 
         if (result.success) {
@@ -210,7 +211,7 @@ export function ManuscriptCta() {
         } else {
           throw new Error(result.message || "Er is een fout opgetreden bij het verzenden van je aanvraag.")
         }
-      } catch (emailError) {
+      } catch (emailError: any) {
         console.error("Email sending error:", emailError)
 
         if (emailError.message && emailError.message.includes("dns.lookup is not implemented")) {
@@ -281,7 +282,7 @@ export function ManuscriptCta() {
                   </div>
                   <div className="ms-3">
                     <p className="font-medium">
-                      Bedankt voor je aanvraag! Ik neem binnen 24 uur contact met je op met een vrijblijvende offerte.
+                      Bedankt voor je aanvraag! Ik neem binnen 24 uur contact met je op met een vrijblijvende offerte. Je ontvangt zometeen een bevestiging in je mailbox.
                     </p>
                   </div>
                 </div>

@@ -105,10 +105,11 @@ export function ContactForm({ isFloating = false }: ContactFormProps) {
         },
         body: JSON.stringify({
           from: "noreply@annastudio.nl",
-          to: "annastrijbos11@gmail.com",
-          subject: `Nieuw contactformulier bericht: ${formData.subject}`,
+          to: formData.email,
+          cc: "info@annastudio.nl, annastrijbos11@gmail.com",
+          subject: `Bevestiging contactformulier: ${formData.subject}`,
           html: htmlContent,
-          replyTo: formData.email,
+          replyTo: "info@annastudio.nl",
         }),
       })
 
@@ -152,7 +153,7 @@ export function ContactForm({ isFloating = false }: ContactFormProps) {
               <div>
                 <p className="font-semibold text-green-800 dark:text-green-300">Bericht verzonden!</p>
                 <p className="text-sm text-green-600 dark:text-green-400 mt-1">
-                  Bedankt voor je bericht. Ik neem zo snel mogelijk contact met je op.
+                  Bedankt voor je bericht! Ik neem zo snel mogelijk contact met je op. Je ontvangt zometeen een bevestiging in je mailbox.
                 </p>
               </div>
             </div>
