@@ -5,7 +5,7 @@ export function CustomHead() {
       <meta name="robots" content="index, follow" />
       <meta name="googlebot" content="index, follow" />
       <meta property="og:locale" content="nl_NL" />
-      <meta property="og:site_name" content="Anna's Schrijfstudio" />
+      <meta property="og:site_name" content="Anna's Studio" />
       <meta name="twitter:creator" content="@AnnaStrijbos" />
     </>
   )

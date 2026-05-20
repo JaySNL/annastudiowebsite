@@ -80,7 +80,7 @@ export function ContactForm({ isFloating = false }: ContactFormProps) {
           </div>
           <div style="margin-top: 20px; padding: 15px; background: #f0f0f0; border-radius: 8px; font-size: 12px; color: #666; border-top: 1px solid #ddd;">
             <h4 style="margin-top: 0; color: #333;">Privacy & Beveiligingsinformatie:</h4>
-            <p><strong>Verzonden via:</strong> Anna's Schrijfstudio Contactformulier</p>
+            <p><strong>Verzonden via:</strong> Anna's Studio Contactformulier</p>
             <p><strong>Datum & Tijd:</strong> ${timestamp} (CET/CEST)</p>
             <p><strong>Beveiligingstype:</strong> Dit bericht is verzonden via een beveiligd formulier met:</p>
             <ul style="margin: 5px 0; padding-left: 20px;">

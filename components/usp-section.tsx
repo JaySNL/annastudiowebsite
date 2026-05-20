@@ -9,9 +9,9 @@ export function UspSection() {
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mb-4">
               <BookOpen className="h-8 w-8" />
             </div>
-            <h3 className="text-lg font-medium text-foreground mb-2">Gepersonaliseerde cursussen</h3>
+            <h3 className="text-lg font-medium text-foreground mb-2">Persoonlijke begeleiding</h3>
             <p className="text-muted-foreground">
-              Cursussen op maat gemaakt voor jouw specifieke schrijfbehoeften en doelen.
+              Op maat gemaakte trajecten voor jouw specifieke schrijfbehoeften en doelen.
             </p>
           </div>
 

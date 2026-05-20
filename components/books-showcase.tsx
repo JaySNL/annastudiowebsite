@@ -22,7 +22,7 @@ const books: Book[] = [
     publisher: "Atlas Contact",
     role: "Inhoudelijke redactie",
     url: "https://www.atlascontact.nl/boek/de-droom-van-den-haag/",
-    image: "https://www.atlascontact.nl/wp-content/uploads/2024/09/9789045048376_frontcover_original-320x491.jpg",
+    image: "/images/books/droom-den-haag.jpg",
   },
   {
     title: "Ik wil gewoon mijn moeder terug",
@@ -30,7 +30,7 @@ const books: Book[] = [
     publisher: "Atlas Contact",
     role: "Inhoudelijke redactie",
     url: "https://www.atlascontact.nl/boek/ik-wil-gewoon-mijn-moeder-terug-ebook/",
-    image: "https://www.atlascontact.nl/wp-content/uploads/2024/06/9789045050584_frontcover_original-320x498.jpg",
+    image: "/images/books/moeder-terug.jpg",
   },
   {
     title: "Over the Limit, On the Edge",
@@ -38,7 +38,7 @@ const books: Book[] = [
     publisher: "Blossom Books",
     role: "Eindredactie",
     url: "https://www.blossombooks.nl/product/on-the-edge/",
-    image: "https://www.blossombooks.nl/wp-content/uploads/2025/07/3-700x1091.png",
+    image: "/images/books/on-the-edge.png",
   },
   {
     title: "Samenleven met AI",
@@ -46,7 +46,7 @@ const books: Book[] = [
     publisher: "Bot Uitgevers",
     role: "Eindredactie",
     url: "https://www.botuitgevers.nl/product/lija-rodolfo-groenewoud-van-vliet-samenleven-met-ai/",
-    image: "https://www.botuitgevers.nl/wp-content/uploads/2025/07/Samenleven-met-AI_Bot_0407.jpg",
+    image: "/images/books/samenleven-ai.jpg",
   },
   {
     title: "Eindelijk rust",
@@ -54,7 +54,47 @@ const books: Book[] = [
     publisher: "Bot Uitgevers",
     role: "Eindredactie",
     url: "https://www.botuitgevers.nl/product/koos-neuvel-eindelijk-rust/",
-    image: "https://www.botuitgevers.nl/wp-content/uploads/2025/10/eindelijk-rust-voorplat.png",
+    image: "/images/books/eindelijk-rust.png",
+  },
+  {
+    title: "Tegen de oligarchie",
+    author: "Bernie Sanders",
+    publisher: "Bot Uitgevers",
+    role: "Eindredactie",
+    url: "https://www.botuitgevers.nl/product/bernie-sanders-tegen-de-oligarchie/",
+    image: "/images/books/tegen-oligarchie.jpg",
+  },
+  {
+    title: "Aai een badeend in de trein",
+    author: "Milou Gevers",
+    publisher: "Bot Uitgevers",
+    role: "Eindredactie",
+    url: "https://www.botuitgevers.nl/product/milou-gevers-aai-een-badeend-in-de-trein/",
+    image: "/images/books/badeend-trein.jpg",
+  },
+  {
+    title: "Meer dan een kromme rug",
+    author: "Sarah Pielman",
+    publisher: "Self-published",
+    role: "Begeleiding",
+    url: "https://meerdaneenkrommerug.nl/product/pre-order-meer-dan-een-kromme-rug/",
+    image: "/images/books/kromme-rug.png",
+  },
+  {
+    title: "De stilte in Caatjes hoofd",
+    author: "Caroline Hopman",
+    publisher: "Self-published",
+    role: "Begeleiding",
+    url: "https://www.destilteincaatjeshoofd.nl",
+    image: "/images/books/stilte-caatje.jpg",
+  },
+  {
+    title: "De Zilver Saga",
+    author: "Sander Cox",
+    publisher: "Self-published",
+    role: "Begeleiding",
+    url: "https://www.sanx.nl/dezilverjagersaga-roman/",
+    image: "/images/books/zilver-saga.jpg",
   },
 ]
 
@@ -84,7 +124,7 @@ export function BooksShowcase() {
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
-              Van Manuscript naar Bestseller
+              Van manuscript naar bestseller
             </h2>
 
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
@@ -94,7 +134,7 @@ export function BooksShowcase() {
 
             <Link href="/boeken">
               <Button size="lg" className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                Bekijk alle projecten
+                Bekijk alle boeken
                 <ExternalLink className="ml-2 h-5 w-5" />
               </Button>
             </Link>

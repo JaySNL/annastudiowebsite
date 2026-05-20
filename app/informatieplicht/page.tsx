@@ -5,7 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Informatieplicht voor Consumenten (art. 6:230m BW) | Anna's Schrijfstudio",
+  title: "Informatieplicht voor Consumenten (art. 6:230m BW) | Anna's Studio",
   description:
     "Verplichte informatie voor consumenten volgens artikel 6:230m BW. Bedrijfsgegevens, diensten, prijzen, herroepingsrecht en algemene voorwaarden.",
 }
@@ -64,7 +64,7 @@ export default function InformatieplichtPage() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <p className="font-semibold text-foreground">Handelsnaam</p>
-                      <p className="text-muted-foreground">Anna's Schrijfstudio</p>
+                      <p className="text-muted-foreground">Anna's Studio</p>
                     </div>
                     <div>
                       <p className="font-semibold text-foreground">KvK-nummer</p>
@@ -103,7 +103,7 @@ export default function InformatieplichtPage() {
                 <h2 className="text-xl font-bold mb-4">Dienstenomschrijving</h2>
                 <div className="space-y-4">
                   <p className="text-muted-foreground">
-                    Anna's Schrijfstudio biedt professionele diensten op het gebied van:
+                    Anna's Studio biedt professionele diensten op het gebied van:
                   </p>
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
@@ -251,7 +251,7 @@ export default function InformatieplichtPage() {
               <section className="border-l-4 border-primary pl-6">
                 <h2 className="text-xl font-bold mb-4">Algemene voorwaarden</h2>
                 <p className="text-muted-foreground mb-4">
-                  Op alle overeenkomsten zijn de algemene voorwaarden van Anna's Schrijfstudio van toepassing. Hierin
+                  Op alle overeenkomsten zijn de algemene voorwaarden van Anna's Studio van toepassing. Hierin
                   vind je uitgebreide informatie over intellectueel eigendom, aansprakelijkheid, privacy en
                   geschillenregeling.
                 </p>

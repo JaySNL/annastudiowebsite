@@ -4,81 +4,81 @@
 
 @layer base {
   :root {
-    /* New Professional Color Palette - Warm Neutrals */
-    --background: 40 20% 97%;
-    --foreground: 30 10% 15%;
+    /* Anna's Studio — white base, teal primary, gold accent */
+    --background: 0 0% 100%;
+    --foreground: 40 4% 11%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 30 10% 15%;
+    --card: 42 25% 99%;
+    --card-foreground: 40 4% 11%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 30 10% 15%;
+    --popover: 42 25% 99%;
+    --popover-foreground: 40 4% 11%;
 
-    /* Primary - Warm Taupe/Bronze */
-    --primary: 30 25% 65%;
-    --primary-foreground: 30 20% 20%;
-    --primary-hover: 30 25% 55%;
+    /* Primary — brand teal #008194 */
+    --primary: 188 80% 30%;
+    --primary-foreground: 42 30% 97%;
+    --primary-hover: 188 75% 24%;
 
-    /* Secondary - Deep Charcoal */
-    --secondary: 30 10% 20%;
-    --secondary-foreground: 40 20% 95%;
+    /* Secondary — off-black #1d1d1b */
+    --secondary: 40 4% 11%;
+    --secondary-foreground: 42 30% 97%;
 
-    /* Accent - Subtle Gold */
-    --accent: 35 35% 65%;
-    --accent-foreground: 35 40% 25%;
+    /* Accent — brand gold #eeab00 */
+    --accent: 43 85% 47%;
+    --accent-foreground: 40 4% 11%;
 
-    --muted: 40 15% 92%;
-    --muted-foreground: 30 10% 40%;
+    --muted: 42 20% 93%;
+    --muted-foreground: 40 8% 42%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 30 15% 88%;
-    --input: 30 15% 88%;
-    --ring: 30 25% 65%;
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 188 80% 30%;
 
     --radius: 1rem;
 
-    /* Professional Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
-    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
+    /* Tinted shadows — warmed to match cream base */
+    --shadow-sm: 0 2px 4px rgba(29, 29, 27, 0.04);
+    --shadow-md: 0 4px 16px rgba(29, 29, 27, 0.06);
+    --shadow-lg: 0 8px 30px rgba(29, 29, 27, 0.08);
+    --shadow-xl: 0 20px 40px -15px rgba(29, 29, 27, 0.1);
 
-    /* Glassmorphism */
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.2);
+    /* Glassmorphism — warmer tint */
+    --glass-bg: rgba(255, 253, 248, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.3);
   }
 
   .dark {
-    --background: 30 15% 12%;
-    --foreground: 40 20% 95%;
+    --background: 220 10% 10%;
+    --foreground: 42 20% 92%;
 
-    --card: 30 12% 15%;
-    --card-foreground: 40 20% 95%;
+    --card: 220 8% 13%;
+    --card-foreground: 42 20% 92%;
 
-    --popover: 30 12% 15%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 220 8% 13%;
+    --popover-foreground: 42 20% 92%;
 
-    --primary: 30 25% 60%;
-    --primary-foreground: 30 20% 95%;
-    --primary-hover: 30 25% 50%;
+    --primary: 188 70% 42%;
+    --primary-foreground: 220 10% 10%;
+    --primary-hover: 188 65% 35%;
 
-    --secondary: 40 20% 85%;
-    --secondary-foreground: 30 10% 20%;
+    --secondary: 42 20% 88%;
+    --secondary-foreground: 220 10% 10%;
 
-    --accent: 35 35% 60%;
-    --accent-foreground: 35 40% 90%;
+    --accent: 43 75% 52%;
+    --accent-foreground: 220 10% 10%;
 
-    --muted: 30 12% 18%;
-    --muted-foreground: 40 15% 70%;
+    --muted: 220 8% 16%;
+    --muted-foreground: 42 12% 65%;
 
-    --border: 30 12% 25%;
-    --input: 30 12% 25%;
-    --ring: 30 25% 55%;
+    --border: 220 8% 22%;
+    --input: 220 8% 22%;
+    --ring: 188 70% 42%;
 
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.08);
   }
 }
 

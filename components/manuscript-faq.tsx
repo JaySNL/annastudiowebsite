@@ -10,7 +10,7 @@ export function ManuscriptFaq() {
     {
       question: "Hoe lang duurt een manuscriptbeoordeling?",
       answer:
-        "De doorlooptijd hangt af van de lengte van je manuscript en het gekozen pakket. Voor een Inhoudelijke Redactieronde kun je rekenen op 1-2 weken, voor Inhoudelijk + Spelling op 2-3 weken. Bij een volledig redactietraject maken we samen een planning op maat.",
+        "Voor redactierondes maximaal twee weken, maar het zou ook een week kunnen zijn. Het hangt van de drukte af. Bij een volledig redactietraject maken we samen een planning op maat.",
     },
     {
       question: "Wat is het verschil tussen een manuscriptbeoordeling en redactie?",
@@ -25,7 +25,7 @@ export function ManuscriptFaq() {
     {
       question: "Kan ik ook een deel van mijn manuscript laten beoordelen?",
       answer:
-        "Zeker! Je kunt bijvoorbeeld de eerste hoofdstukken laten beoordelen om te zien of je op de goede weg bent. Dit is een kosteneffectieve manier om feedback te krijgen voordat je het hele manuscript afrondt.",
+        "Zeker! Je ontvangt geen leesrapport, maar tools, tips, kantlijnopmerkingen en een gericht advies waar je mee verder kunt. Dit is een effectieve manier om feedback te krijgen voordat je het hele manuscript afrondt.",
     },
     {
       question: "Wat gebeurt er na de manuscriptbeoordeling?",
@@ -35,7 +35,7 @@ export function ManuscriptFaq() {
     {
       question: "Helpt een manuscriptbeoordeling bij het vinden van een uitgever?",
       answer:
-        "Een professionele manuscriptbeoordeling kan je manuscript aanzienlijk verbeteren, wat je kansen bij uitgevers vergroot. Daarnaast kan ik je adviseren over het schrijven van een goede pitch en het benaderen van uitgevers. Let wel: een positieve beoordeling is geen garantie voor publicatie, maar het verhoogt wel je kansen.",
+        "Een professionele manuscriptbeoordeling kan je manuscript aanzienlijk verbeteren! Met concrete tips, tools en persoonlijke feedback vergroot je je kansen bij uitgevers. Daarnaast kan ik je adviseren over het schrijven van een goede pitch en het benaderen van uitgevers. Let wel: er is geen garantie voor publicatie, maar het verhoogt absoluut je kansen.",
     },
   ]
 

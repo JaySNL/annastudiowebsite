@@ -5,9 +5,9 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Algemene Voorwaarden & Annuleringsbeleid | Anna's Schrijfstudio",
+  title: "Algemene Voorwaarden & Annuleringsbeleid | Anna's Studio",
   description:
-    "Lees hier de algemene voorwaarden en het annuleringsbeleid van Anna's Schrijfstudio. Transparante afspraken over onze dienstverlening.",
+    "Lees hier de algemene voorwaarden en het annuleringsbeleid van Anna's Studio. Transparante afspraken over onze dienstverlening.",
 }
 
 export default function AlgemeneVoorwaardenPage() {
@@ -31,7 +31,7 @@ export default function AlgemeneVoorwaardenPage() {
               </div>
               <div>
                 <h1 className="text-3xl font-bold mb-2">Algemene Voorwaarden & Annuleringsbeleid</h1>
-                <p className="text-muted-foreground">Anna's Schrijfstudio - Versie 26 december 2025</p>
+                <p className="text-muted-foreground">Anna's Studio - Versie 26 december 2025</p>
               </div>
             </div>
 
@@ -56,7 +56,7 @@ export default function AlgemeneVoorwaardenPage() {
 
             <div className="prose prose-sm max-w-none mb-8">
               <p className="text-base">
-                Bij Anna's Schrijfstudio werken we volgens duidelijke en transparante afspraken. In onze algemene
+                Bij Anna's Studio werken we volgens duidelijke en transparante afspraken. In onze algemene
                 voorwaarden vind je informatie over:
               </p>
 

@@ -15,11 +15,11 @@ export function ManuscriptServices() {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">Kies je Pakket</span>
+            <span className="text-sm font-medium text-primary">Kies je pakket</span>
           </div>
 
           <h2 className="fluid-h2 text-foreground mb-4">
-            Manuscriptbeoordeling <span className="gradient-text">Pakketten</span>
+            Manuscriptbeoordeling pakketten
           </h2>
           <p className="fluid-p text-muted-foreground">
             Kies het pakket dat het beste bij jouw manuscript past. Alle beoordelingen worden persoonlijk uitgevoerd.
@@ -39,10 +39,10 @@ export function ManuscriptServices() {
               </div>
 
               <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-serif font-bold mb-2">Inhoudelijke Redactieronde</h3>
-                <div className="flex items-baseline mb-4">
-                  <span className="text-2xl font-bold text-primary">€8,95</span>
-                  <span className="text-muted-foreground ml-1 text-sm">/1000 woorden</span>
+                <h3 className="text-xl font-serif font-bold mb-2">Inhoudelijke redactieronde</h3>
+                <div className="mb-4">
+                  <span className="text-2xl font-bold text-primary">Vanaf €100</span>
+                  <p className="text-muted-foreground text-sm">daarna €12,- per 1000 woorden</p>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
@@ -87,10 +87,10 @@ export function ManuscriptServices() {
               </div>
 
               <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-serif font-bold mb-2">Inhoudelijk + Spelling</h3>
+                <h3 className="text-xl font-serif font-bold mb-2">Inhoudelijk + spelling</h3>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-2xl font-bold text-primary">€10,95</span>
-                  <span className="text-muted-foreground ml-1 text-sm">/1000 woorden</span>
+                  <span className="text-2xl font-bold text-primary">€16,-</span>
+                  <span className="text-muted-foreground ml-1 text-sm">per 1000 woorden</span>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
@@ -132,8 +132,8 @@ export function ManuscriptServices() {
               <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-serif font-bold mb-2">Persklaarmaken</h3>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-2xl font-bold text-accent-foreground">€15,00</span>
-                  <span className="text-muted-foreground ml-1 text-sm">/1000 woorden</span>
+                  <span className="text-2xl font-bold text-accent-foreground">€15,-</span>
+                  <span className="text-muted-foreground ml-1 text-sm">per 1000 woorden</span>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
@@ -180,8 +180,8 @@ export function ManuscriptServices() {
               <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-serif font-bold mb-2">Eindcorrectie</h3>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-2xl font-bold text-primary">€6,95</span>
-                  <span className="text-muted-foreground ml-1 text-sm">/1000 woorden</span>
+                  <span className="text-2xl font-bold text-primary">€7,-</span>
+                  <span className="text-muted-foreground ml-1 text-sm">per 1000 woorden</span>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">

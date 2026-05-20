@@ -2,8 +2,8 @@ export function JsonLd() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "Anna's Schrijfstudio",
-    alternateName: ["Annastudio", "Anna Studio", "Anna Strijbos Schrijfstudio"],
+    name: "Anna's Studio",
+    alternateName: ["Annastudio", "Anna Studio", "Anna Strijbos Studio"],
     description:
       "Professionele begeleiding bij het schrijven van jouw verhaal, van eerste idee tot publicatie. Schrijfcursussen en manuscriptbeoordeling door Anna Strijbos.",
     url: "https://annasschrijfstudio.nl",

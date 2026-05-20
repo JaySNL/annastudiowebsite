@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2 space-y-4">
-            <h3 className="text-xl font-serif font-bold text-primary">Anna's Schrijfstudio</h3>
+            <h3 className="text-xl font-serif font-bold text-primary">Anna's Studio</h3>
             <p className="text-sm text-muted-foreground max-w-md">
               Professionele begeleiding bij het schrijven van jouw verhaal, van eerste idee tot publicatie. Ervaren
               redacteur en schrijfcoach met een passie voor literatuur.
@@ -56,11 +56,11 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-bold text-foreground uppercase tracking-wider mb-4">Snelle Links</h4>
+            <h4 className="text-sm font-bold text-foreground tracking-wide mb-4">Snelle Links</h4>
             <ul className="space-y-2">
               {[
                 { href: "/", label: "Home" },
-                { href: "/#about", label: "Over Anna" },
+                { href: "/over-anna", label: "Over Anna" },
                 { href: "/boeken", label: "Boeken" },
                 { href: "/manuscriptbeoordeling", label: "Manuscriptbeoordeling" },
                 { href: "/#contact", label: "Contact" },
@@ -82,7 +82,7 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-sm font-bold text-foreground uppercase tracking-wider mb-4">Contact</h4>
+            <h4 className="text-sm font-bold text-foreground tracking-wide mb-4">Contact</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <Mail className="h-4 w-4 text-primary shrink-0 mt-0.5" />
@@ -109,7 +109,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Anna's Schrijfstudio. Alle rechten voorbehouden.
+            © {new Date().getFullYear()} Anna's Studio. Alle rechten voorbehouden.
           </p>
         </div>
       </div>

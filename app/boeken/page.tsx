@@ -15,7 +15,6 @@ export default function BooksPage() {
         <Breadcrumbs
           items={[
             { label: 'Home', href: '/' },
-            { label: 'Over Anna', href: '/#about' },
             { label: 'Boeken', href: '/boeken' }
           ]}
         />

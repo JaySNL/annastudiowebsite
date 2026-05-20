@@ -28,7 +28,7 @@ export function ManuscriptHero() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Professionele Manuscriptbeoordeling</span>
+              <span className="text-sm font-medium text-primary">Professionele manuscriptbeoordeling</span>
             </div>
 
             {/* Main Headline */}
@@ -40,17 +40,16 @@ export function ManuscriptHero() {
 
             {/* Subheadline */}
             <p className="fluid-p text-muted-foreground max-w-2xl">
-              Laat je manuscript beoordelen door een professionele redacteur. Van basis leesrapport tot complete
-              eindredactie - persoonlijke feedback die jouw verhaal naar een hoger niveau tilt.
+              Laat je manuscript beoordelen door een professionele redacteur. Vanaf een basis leesrapport tot aan volledige eindredactie. Ik voorzie je van persoonlijke feedback die jouw manuscript naar het hoogste niveau tilt.
             </p>
 
             {/* Features */}
             <ul className="space-y-3">
               {[
                 "Persoonlijke feedback van een ervaren redacteur",
-                "Gedetailleerd leesrapport met concrete verbeterpunten",
-                "Structuur- en stijladvies op maat",
-                "Spellingcontrole en taalkundige correcties",
+                "Concrete verbeterpunten zodat je verder kunt",
+                "Structuuradvies én stijladvies op maat",
+                "Spellingscontrole, basiscontrole, tot aan eindcorrectie",
               ].map((item, index) => (
                 <li
                   key={index}
@@ -69,7 +68,7 @@ export function ManuscriptHero() {
                 href="#pakketten"
                 className="group inline-flex items-center justify-center rounded-xl bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lifted hover:shadow-floating hover:bg-primary-hover transition-all duration-300"
               >
-                Bekijk de Pakketten
+                Bekijk de pakketten
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>

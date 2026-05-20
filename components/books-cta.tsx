@@ -1,13 +1,13 @@
 'use client'
 
-import { Mail } from 'lucide-react'
+import { Mail, BookOpen } from 'lucide-react'
 
 export function BooksCta() {
   return (
     <section className="py-16 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto glass rounded-2xl p-8 md:p-12 shadow-soft border border-primary/10 text-center">
-          <div className="mb-4 text-4xl">📚</div>
+          <div className="mb-4"><BookOpen className="w-10 h-10 text-primary mx-auto" /></div>
           <h2 className="text-3xl font-bold text-foreground mb-4">Wil jij samen met mij werken?</h2>
           <p className="text-muted-foreground mb-8">
             Met jarenlange ervaring in redactie en manuscript beoordeling help ik auteurs hun werk tot volledige potentieel te brengen. Of het nu gaat om inhoudelijke editing, eindredactie, of volledige begeleiding—ik ben hier voor jou.

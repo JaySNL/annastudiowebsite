@@ -20,10 +20,10 @@ export function ReviewsSection() {
           </div>
 
           <h2 className="fluid-h2 text-foreground mb-4">
-            Wat <span className="gradient-text">Auteurs Zeggen</span>
+            Wat auteurs zeggen
           </h2>
           <p className="fluid-p text-muted-foreground">
-            Ontdek hoe Anna's professionele begeleiding het verschil maakt
+            Ontdek hoe persoonlijke begeleiding het verschil maakt
           </p>
         </div>
 
@@ -36,16 +36,16 @@ export function ReviewsSection() {
           <div className="glass rounded-2xl p-8 shadow-soft border border-primary/10">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-primary">4.9★</div>
-                <p className="text-sm text-muted-foreground">Gemiddelde Beoordeling</p>
+                <div className="text-4xl font-bold text-primary">+100</div>
+                <p className="text-sm text-muted-foreground">Tevreden auteurs</p>
               </div>
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-primary">50+</div>
-                <p className="text-sm text-muted-foreground">Tevreden Auteurs</p>
+                <div className="text-4xl font-bold text-primary">+25</div>
+                <p className="text-sm text-muted-foreground">Tevreden bedrijven</p>
               </div>
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-primary">98%</div>
-                <p className="text-sm text-muted-foreground">Zou Aanbevelen</p>
+                <div className="text-4xl font-bold text-primary">100+</div>
+                <p className="text-sm text-muted-foreground">Tevreden klanten</p>
               </div>
             </div>
           </div>

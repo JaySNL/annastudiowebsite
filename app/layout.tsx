@@ -9,26 +9,26 @@ import { CustomHead } from "@/components/custom-head"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Anna's Schrijfstudio | Anna Strijbos | Schrijver & Redacteur",
+  title: "Anna's Studio | Anna Strijbos | Schrijver & Redacteur",
   description:
-    "Anna Strijbos biedt professionele schrijfcursussen en manuscriptbeoordeling. Ontdek en ontwikkel je schrijftalent met Anna's Schrijfstudio.",
+    "Anna Strijbos biedt professionele schrijfcursussen en manuscriptbeoordeling. Ontdek en ontwikkel je schrijftalent met Anna's Studio.",
   keywords:
     "Anna Strijbos, Annastudio, Anna's Studio, Anna Studio Schrijver, schrijfcursus, manuscriptbeoordeling, schrijfcoach, redacteur",
   authors: [{ name: "Anna Strijbos" }],
   creator: "Anna Strijbos",
-  publisher: "Anna's Schrijfstudio",
+  publisher: "Anna's Studio",
   openGraph: {
     type: "website",
     locale: "nl_NL",
     url: "https://annasschrijfstudio.nl",
-    title: "Anna's Schrijfstudio | Anna Strijbos | Schrijver & Redacteur",
+    title: "Anna's Studio | Anna Strijbos | Schrijver & Redacteur",
     description:
-      "Anna Strijbos biedt professionele schrijfcursussen en manuscriptbeoordeling. Ontdek en ontwikkel je schrijftalent met Anna's Schrijfstudio.",
-    siteName: "Anna's Schrijfstudio",
+      "Anna Strijbos biedt professionele schrijfcursussen en manuscriptbeoordeling. Ontdek en ontwikkel je schrijftalent met Anna's Studio.",
+    siteName: "Anna's Studio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Anna's Schrijfstudio | Anna Strijbos",
+    title: "Anna's Studio | Anna Strijbos",
     description: "Anna Strijbos biedt professionele schrijfcursussen en manuscriptbeoordeling.",
   },
   alternates: {
