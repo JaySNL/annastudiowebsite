@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { sendEmail } from "@/actions/send-email"
+import { pricing } from "@/lib/pricing"
 
 export function ManuscriptCta() {
   const [formData, setFormData] = useState({
@@ -48,8 +49,8 @@ export function ManuscriptCta() {
         "Punt- en kommacorrecties",
       ],
       volledig: [
-        "Volledig Redactietraject",
-        "Persoonlijke begeleiding",
+        "Eigen traject",
+        "Persoonlijk schrijftraject",
         "Meerdere feedbackrondes",
         "Advies op maat",
       ],
@@ -78,24 +79,26 @@ export function ManuscriptCta() {
     // Calculate price for selected packages
     formData.selectedPackages.forEach((pkg) => {
       let pricePer1000 = 0
+      let baseFee = 0
       switch (pkg) {
         case "inhoudelijke-redactie":
-          pricePer1000 = 8.95
+          pricePer1000 = pricing.inhoudelijk.perThousand
+          baseFee = pricing.inhoudelijk.base
           break
         case "inhoudelijk-spelling":
-          pricePer1000 = 10.95
+          pricePer1000 = pricing.inhoudelijkSpelling.perThousand
           break
         case "persklaarmaken":
-          pricePer1000 = 15.0
+          pricePer1000 = pricing.persklaar.perThousand
           break
         case "eindcorrectie":
-          pricePer1000 = 6.95
+          pricePer1000 = pricing.eindcorrectie.perThousand
           break
         case "volledig":
           pricePer1000 = 0 // Will display as "Prijs op aanvraag"
           break
       }
-      totalPrice += (wordCount / 1000) * pricePer1000
+      totalPrice += baseFee + (wordCount / 1000) * pricePer1000
       summary.push(...getPackageDescription(pkg))
     })
 
@@ -108,10 +111,10 @@ export function ManuscriptCta() {
 
     // Add consultation price
     if (formData.consultationType === "60min") {
-      totalPrice += 135
+      totalPrice += pricing.advies60.price
       summary.push("Adviesgesprek (60 min)")
     } else if (formData.consultationType === "90min") {
-      totalPrice += 195
+      totalPrice += pricing.advies90.price
       summary.push("Adviesgesprek (90 min)")
     }
 
@@ -155,7 +158,7 @@ export function ManuscriptCta() {
         "inhoudelijk-spelling": "Inhoudelijk + Spelling",
         persklaarmaken: "Persklaarmaken",
         eindcorrectie: "Eindcorrectie",
-        volledig: "Volledig Redactietraject",
+        volledig: "Eigen traject",
       }
 
       const selectedPackageNames = formData.selectedPackages
@@ -163,8 +166,8 @@ export function ManuscriptCta() {
         .join(", ")
 
       let consultationDisplay = "Geen"
-      if (formData.consultationType === "60min") consultationDisplay = "60 min (€135)"
-      if (formData.consultationType === "90min") consultationDisplay = "90 min (€195)"
+      if (formData.consultationType === "60min") consultationDisplay = `60 min (${pricing.advies60.display})`
+      if (formData.consultationType === "90min") consultationDisplay = `90 min (${pricing.advies90.display})`
 
       const timestamp = new Date().toLocaleString("nl-NL", { timeZone: "Europe/Amsterdam" })
       const formHtml = `
@@ -422,7 +425,7 @@ export function ManuscriptCta() {
                       <label htmlFor="pkg-inhoudelijk" className="font-medium text-foreground cursor-pointer">
                         Inhoudelijke Redactieronde
                       </label>
-                      <p className="text-xs text-muted-foreground">€8,95 per 1000 woorden</p>
+                      <p className="text-xs text-muted-foreground">{`€${pricing.inhoudelijk.base} vast, daarna €${pricing.inhoudelijk.perThousand},- per 1000 woorden`}</p>
                     </div>
                   </div>
                   <div className="flex items-start p-3 border border-border rounded-lg bg-card/50">
@@ -438,7 +441,7 @@ export function ManuscriptCta() {
                       <label htmlFor="pkg-inhoudelijk-spelling" className="font-medium text-foreground cursor-pointer">
                         Inhoudelijk + Spelling
                       </label>
-                      <p className="text-xs text-muted-foreground">€10,95 per 1000 woorden</p>
+                      <p className="text-xs text-muted-foreground">{`€${pricing.inhoudelijkSpelling.perThousand},- per 1000 woorden`}</p>
                     </div>
                   </div>
                   <div className="flex items-start p-3 border border-border rounded-lg bg-card/50">
@@ -454,7 +457,7 @@ export function ManuscriptCta() {
                       <label htmlFor="pkg-persklaar" className="font-medium text-foreground cursor-pointer">
                         Persklaarmaken
                       </label>
-                      <p className="text-xs text-muted-foreground">€15,00 per 1000 woorden</p>
+                      <p className="text-xs text-muted-foreground">{`€${pricing.persklaar.perThousand},- per 1000 woorden`}</p>
                     </div>
                   </div>
                   <div className="flex items-start p-3 border border-border rounded-lg bg-card/50">
@@ -470,7 +473,7 @@ export function ManuscriptCta() {
                       <label htmlFor="pkg-eindcorrectie" className="font-medium text-foreground cursor-pointer">
                         Eindcorrectie
                       </label>
-                      <p className="text-xs text-muted-foreground">€6,95 per 1000 woorden</p>
+                      <p className="text-xs text-muted-foreground">{`€${pricing.eindcorrectie.perThousand},- per 1000 woorden`}</p>
                     </div>
                   </div>
                   <div className="flex items-start p-3 border border-border rounded-lg bg-card/50 md:col-span-2">
@@ -484,7 +487,7 @@ export function ManuscriptCta() {
                     />
                     <div>
                       <label htmlFor="pkg-volledig" className="font-medium text-foreground cursor-pointer">
-                        Volledig Redactietraject
+                        Eigen traject
                       </label>
                       <p className="text-xs text-muted-foreground">Prijs op aanvraag</p>
                     </div>
@@ -522,7 +525,7 @@ export function ManuscriptCta() {
                         onChange={handleConsultationChange}
                         className="mr-2 h-4 w-4 border-gray-300 text-primary focus:ring-primary"
                       />
-                      <span className="font-medium">60 min (€135)</span>
+                      <span className="font-medium">{`60 min (${pricing.advies60.display})`}</span>
                     </div>
                   </div>
 
@@ -536,7 +539,7 @@ export function ManuscriptCta() {
                         onChange={handleConsultationChange}
                         className="mr-2 h-4 w-4 border-gray-300 text-primary focus:ring-primary"
                       />
-                      <span className="font-medium">90 min (€195)</span>
+                      <span className="font-medium">{`90 min (${pricing.advies90.display})`}</span>
                     </div>
                   </div>
                 </div>
