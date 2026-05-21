@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { FileText, CheckCircle, Sparkles, ArrowRight } from "lucide-react"
+import { CheckCircle, ArrowRight } from "lucide-react"
+import { pricing } from "@/lib/pricing"
 
 export function ManuscriptHero() {
   const [isVisible, setIsVisible] = useState(false)
@@ -87,22 +88,22 @@ export function ManuscriptHero() {
               <div className="relative glass rounded-2xl shadow-floating p-8 border border-primary/20">
                 <div className="flex justify-center mb-6">
                   <div className="h-20 w-20 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center shadow-soft">
-                    <FileText className="h-10 w-10 text-primary" />
+                    <img src="/images/beeldmerk-blauw.png" alt="" className="h-10 w-10 object-contain" aria-hidden="true" />
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-serif font-bold text-center mb-4">Variabele Pakketten</h3>
+                <h3 className="text-2xl font-serif font-bold text-center mb-4">Pakketten</h3>
                 <p className="text-center text-muted-foreground mb-6">
-                  Van kortverhaal tot roman - er is altijd een pakket dat bij jouw manuscript past
+                  Van kort verhaal tot roman — er is altijd een pakket dat bij jouw manuscript past
                 </p>
 
                 <div className="space-y-4">
                   {[
-                    { name: "Inhoudelijke Redactieronde", price: "€8,95 per 1000 woorden" },
-                    { name: "Inhoudelijk + Spelling", price: "€10,95 per 1000 woorden" },
-                    { name: "Persklaarmaken", price: "€15,00 per 1000 woorden" },
-                    { name: "Eindcorrectie", price: "€6,95 per 1000 woorden" },
-                    { name: "Volledig redactietraject", price: "Op aanvraag" },
+                    { name: pricing.inhoudelijk.label, price: `${pricing.inhoudelijk.display}, ${pricing.inhoudelijk.displaySub}` },
+                    { name: pricing.inhoudelijkSpelling.label, price: `${pricing.inhoudelijkSpelling.display} ${pricing.inhoudelijkSpelling.displaySub}` },
+                    { name: pricing.persklaar.label, price: `${pricing.persklaar.display} ${pricing.persklaar.displaySub}` },
+                    { name: pricing.eindcorrectie.label, price: `${pricing.eindcorrectie.display} ${pricing.eindcorrectie.displaySub}` },
+                    { name: pricing.eigenTraject.label, price: pricing.eigenTraject.display },
                   ].map((item, index) => (
                     <div
                       key={index}
