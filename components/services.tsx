@@ -4,6 +4,7 @@ import type React from "react"
 
 import { FileText, Users, ArrowRight, CheckCircle } from "lucide-react"
 import Link from "next/link"
+import { pricing } from "@/lib/pricing"
 
 interface ServiceCardProps {
   icon: React.ReactNode
@@ -136,7 +137,7 @@ export function Services() {
             icon={<FileText className="h-12 w-12 text-primary" />}
             title="Manuscriptbeoordeling"
             description="Laat je manuscript beoordelen door een professionele redacteur en til je manuscript naar een hoger niveau. Van basisleesrapport tot een complete eindredactie."
-            price="€100 vast tarief, daarna vanaf €12,- per 1000 woorden"
+            price={pricing.inhoudelijk.displayFull}
             features={[
               "Professioneel leesrapport",
               "Structuur & spanningsopbouw",
@@ -153,7 +154,7 @@ export function Services() {
             icon={<Users className="h-12 w-12 text-primary" />}
             title="Eigen traject"
             description="Maak gebruik van persoonlijke schrijfbegeleiding. Samen met jou kijk ik naar wat het beste is voor jouw manuscript. Inclusief persoonlijke sessies!"
-            price="Op aanvraag"
+            price={pricing.eigenTraject.display}
             features={[
               "Volledig op maat gemaakt",
               "Continue persoonlijke begeleiding",

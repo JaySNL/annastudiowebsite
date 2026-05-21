@@ -1,6 +1,7 @@
 "use client"
 
 import { FileText, BookOpen, Sparkles, Scissors, Phone, CheckCircle, HelpCircle } from "lucide-react"
+import { pricing } from "@/lib/pricing"
 
 export function ManuscriptServices() {
   return (
@@ -39,10 +40,10 @@ export function ManuscriptServices() {
               </div>
 
               <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-serif font-bold mb-2">Inhoudelijke redactieronde</h3>
+                <h3 className="text-xl font-serif font-bold mb-2">{pricing.inhoudelijk.label}</h3>
                 <div className="mb-4">
-                  <span className="text-2xl font-bold text-primary">Vanaf €100</span>
-                  <p className="text-muted-foreground text-sm">daarna €12,- per 1000 woorden</p>
+                  <span className="text-2xl font-bold text-primary">{pricing.inhoudelijk.display}</span>
+                  <p className="text-muted-foreground text-sm">{pricing.inhoudelijk.displaySub}</p>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
@@ -87,10 +88,10 @@ export function ManuscriptServices() {
               </div>
 
               <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-serif font-bold mb-2">Inhoudelijk + spelling</h3>
+                <h3 className="text-xl font-serif font-bold mb-2">{pricing.inhoudelijkSpelling.label}</h3>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-2xl font-bold text-primary">€16,-</span>
-                  <span className="text-muted-foreground ml-1 text-sm">per 1000 woorden</span>
+                  <span className="text-2xl font-bold text-primary">{pricing.inhoudelijkSpelling.display}</span>
+                  <span className="text-muted-foreground ml-1 text-sm">{pricing.inhoudelijkSpelling.displaySub}</span>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
@@ -130,10 +131,10 @@ export function ManuscriptServices() {
               </div>
 
               <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-serif font-bold mb-2">Persklaarmaken</h3>
+                <h3 className="text-xl font-serif font-bold mb-2">{pricing.persklaar.label}</h3>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-2xl font-bold text-accent-foreground">€15,-</span>
-                  <span className="text-muted-foreground ml-1 text-sm">per 1000 woorden</span>
+                  <span className="text-2xl font-bold text-accent-foreground">{pricing.persklaar.display}</span>
+                  <span className="text-muted-foreground ml-1 text-sm">{pricing.persklaar.displaySub}</span>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
@@ -178,10 +179,10 @@ export function ManuscriptServices() {
               </div>
 
               <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-serif font-bold mb-2">Eindcorrectie</h3>
+                <h3 className="text-xl font-serif font-bold mb-2">{pricing.eindcorrectie.label}</h3>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-2xl font-bold text-primary">€7,-</span>
-                  <span className="text-muted-foreground ml-1 text-sm">per 1000 woorden</span>
+                  <span className="text-2xl font-bold text-primary">{pricing.eindcorrectie.display}</span>
+                  <span className="text-muted-foreground ml-1 text-sm">{pricing.eindcorrectie.displaySub}</span>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
@@ -233,8 +234,8 @@ export function ManuscriptServices() {
             <div className="flex-shrink-0 w-full md:w-auto flex flex-col gap-4">
               <div className="p-4 bg-background/50 rounded-xl border border-primary/10 min-w-[250px]">
                 <div className="flex justify-between items-center mb-1">
-                  <span className="font-semibold">60 min advies</span>
-                  <span className="text-lg font-bold text-primary">€135</span>
+                  <span className="font-semibold">{pricing.advies60.label}</span>
+                  <span className="text-lg font-bold text-primary">{pricing.advies60.display}</span>
                 </div>
                 <p className="text-xs text-muted-foreground">Exclusief btw</p>
               </div>
@@ -242,8 +243,8 @@ export function ManuscriptServices() {
               <div className="p-4 bg-background/50 rounded-xl border border-primary/10 min-w-[250px] relative overflow-hidden">
                 <div className="absolute right-0 top-0 bg-accent/20 text-accent-foreground text-[10px] font-bold px-2 py-0.5 rounded-bl">POPULAIR</div>
                 <div className="flex justify-between items-center mb-1">
-                  <span className="font-semibold">90 min advies</span>
-                  <span className="text-lg font-bold text-primary">€195</span>
+                  <span className="font-semibold">{pricing.advies90.label}</span>
+                  <span className="text-lg font-bold text-primary">{pricing.advies90.display}</span>
                 </div>
                 <p className="text-xs text-muted-foreground">Exclusief btw</p>
               </div>
