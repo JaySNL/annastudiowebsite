@@ -16,6 +16,9 @@ export function ContactSection() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
+            <div className="flex justify-center mb-4">
+              <img src="/images/beeldmerk.png" alt="" className="h-10 w-auto opacity-60" aria-hidden="true" />
+            </div>
             <h2 className="fluid-h1 text-foreground mb-4">
               Neem contact op
             </h2>

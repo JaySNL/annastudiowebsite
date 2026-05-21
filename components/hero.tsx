@@ -14,6 +14,10 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-background pt-16 pb-12 md:pt-20 md:pb-16">
+      {/* Decorative beeldmerk */}
+      <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-[0.04] pointer-events-none">
+        <Image src="/images/beeldmerk.png" alt="" fill className="object-contain" aria-hidden="true" />
+      </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}

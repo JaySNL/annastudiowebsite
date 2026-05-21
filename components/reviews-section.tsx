@@ -1,6 +1,5 @@
 "use client"
 
-import { Sparkles } from "lucide-react"
 import { ReviewSlider } from "./review-slider"
 
 export function ReviewsSection() {
@@ -15,7 +14,7 @@ export function ReviewsSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-            <Sparkles className="w-4 h-4 text-primary" />
+            <img src="/images/beeldmerk.png" alt="" className="w-5 h-5" aria-hidden="true" />
             <span className="text-sm font-medium text-primary">Ervaringen</span>
           </div>
 

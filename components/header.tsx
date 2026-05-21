@@ -6,6 +6,7 @@ import { ThemeToggle } from "./theme-toggle"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -35,12 +36,15 @@ export function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link
-            className="text-xl font-serif font-bold text-primary hover:text-primary-hover transition-colors"
-            href="/"
-            aria-label="Anna's Studio"
-          >
-            Anna's Studio
+          <Link href="/" aria-label="Anna's Studio" className="flex-shrink-0">
+            <Image
+              src="/images/logo.png"
+              alt="Anna's Studio"
+              width={160}
+              height={52}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-1">

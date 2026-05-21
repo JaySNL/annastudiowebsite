@@ -1,6 +1,7 @@
 "use client"
 
 import { Mail, MapPin } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -14,7 +15,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2 space-y-4">
-            <h3 className="text-xl font-serif font-bold text-primary">Anna's Studio</h3>
+            <Image src="/images/logo.png" alt="Anna's Studio" width={180} height={58} className="h-12 w-auto" />
             <p className="text-sm text-muted-foreground max-w-md">
               Professionele begeleiding bij het schrijven van jouw verhaal, van eerste idee tot publicatie. Ervaren
               redacteur en schrijfcoach met een passie voor literatuur.

@@ -28,7 +28,7 @@ export function BooksShowcase() {
           {/* Header Section */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 text-sm font-medium text-primary bg-primary/10 rounded-full">
-              <BookOpen className="w-4 h-4" />
+              <img src="/images/beeldmerk.png" alt="" className="w-5 h-5" aria-hidden="true" />
               <span>Portfolio</span>
             </div>
 

@@ -124,6 +124,9 @@ export function Services() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="flex justify-center mb-4">
+            <img src="/images/beeldmerk.png" alt="" className="h-10 w-auto opacity-60" aria-hidden="true" />
+          </div>
           <h2 className="fluid-h2 text-foreground mb-4">
             Kies de begeleiding die bij jou past
           </h2>

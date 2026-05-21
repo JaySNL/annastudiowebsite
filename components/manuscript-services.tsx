@@ -15,7 +15,7 @@ export function ManuscriptServices() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-            <Sparkles className="w-4 h-4 text-primary" />
+            <img src="/images/beeldmerk-blauw.png" alt="" className="w-5 h-5" aria-hidden="true" />
             <span className="text-sm font-medium text-primary">Kies je pakket</span>
           </div>
 
@@ -35,7 +35,7 @@ export function ManuscriptServices() {
             <div className="relative h-full flex flex-col glass rounded-2xl overflow-hidden shadow-soft hover:shadow-floating transition-all duration-300 border border-border">
               <div className="p-6 bg-gradient-to-br from-muted/50 to-muted/30 flex items-center justify-center">
                 <div className="p-4 bg-background/80 backdrop-blur rounded-2xl shadow-md group-hover:scale-110 transition-transform duration-300">
-                  <FileText className="h-10 w-10 text-primary" />
+                  <img src="/images/beeldmerk-blauw.png" alt="" className="h-10 w-10 object-contain" aria-hidden="true" />
                 </div>
               </div>
 
@@ -83,7 +83,7 @@ export function ManuscriptServices() {
 
               <div className="p-6 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                 <div className="p-4 bg-background/80 backdrop-blur rounded-2xl shadow-md group-hover:scale-110 transition-transform duration-300">
-                  <BookOpen className="h-10 w-10 text-primary" />
+                  <img src="/images/beeldmerk-geel-blauw.png" alt="" className="h-10 w-10 object-contain" aria-hidden="true" />
                 </div>
               </div>
 
@@ -126,7 +126,7 @@ export function ManuscriptServices() {
             <div className="relative h-full flex flex-col glass rounded-2xl overflow-hidden shadow-soft hover:shadow-floating transition-all duration-300 border border-accent/20">
               <div className="p-6 bg-gradient-to-br from-accent/10 to-muted/30 flex items-center justify-center">
                 <div className="p-4 bg-background/80 backdrop-blur rounded-2xl shadow-md group-hover:scale-110 transition-transform duration-300">
-                  <Scissors className="h-10 w-10 text-accent-foreground" />
+                  <img src="/images/beeldmerk-paars-blauw.png" alt="" className="h-10 w-10 object-contain" aria-hidden="true" />
                 </div>
               </div>
 
@@ -174,7 +174,7 @@ export function ManuscriptServices() {
 
               <div className="p-6 bg-gradient-to-br from-secondary/10 to-muted/30 flex items-center justify-center">
                 <div className="p-4 bg-background/80 backdrop-blur rounded-2xl shadow-md group-hover:scale-110 transition-transform duration-300">
-                  <CheckCircle className="h-10 w-10 text-secondary-foreground" />
+                  <img src="/images/beeldmerk-blauw-paars.png" alt="" className="h-10 w-10 object-contain" aria-hidden="true" />
                 </div>
               </div>
 
@@ -218,7 +218,7 @@ export function ManuscriptServices() {
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 bg-primary/10 rounded-xl">
-                  <Phone className="h-6 w-6 text-primary" />
+                  <img src="/images/beeldmerk-blauw.png" alt="" className="h-6 w-6 object-contain" aria-hidden="true" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold">Add-on: Adviesgesprek</h3>
               </div>

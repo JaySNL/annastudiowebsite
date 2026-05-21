@@ -27,7 +27,7 @@ export function ManuscriptHero() {
           <div className={`lg:col-span-7 space-y-6 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-              <Sparkles className="w-4 h-4 text-primary" />
+              <img src="/images/beeldmerk-blauw.png" alt="" className="w-5 h-5" aria-hidden="true" />
               <span className="text-sm font-medium text-primary">Professionele manuscriptbeoordeling</span>
             </div>
 
