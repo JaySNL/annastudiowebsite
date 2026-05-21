@@ -5,98 +5,7 @@ import { ChevronLeft, ChevronRight, ExternalLink, BookOpen } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-
-interface Book {
-  title: string
-  author: string
-  publisher: string
-  role: string
-  url: string
-  image: string
-}
-
-const books: Book[] = [
-  {
-    title: "De droom van Den Haag",
-    author: "Benjamin Duerr",
-    publisher: "Atlas Contact",
-    role: "Inhoudelijke redactie",
-    url: "https://www.atlascontact.nl/boek/de-droom-van-den-haag/",
-    image: "/images/books/droom-den-haag.jpg",
-  },
-  {
-    title: "Ik wil gewoon mijn moeder terug",
-    author: "Marthe Walter",
-    publisher: "Atlas Contact",
-    role: "Inhoudelijke redactie",
-    url: "https://www.atlascontact.nl/boek/ik-wil-gewoon-mijn-moeder-terug-ebook/",
-    image: "/images/books/moeder-terug.jpg",
-  },
-  {
-    title: "Over the Limit, On the Edge",
-    author: "K. Bromberg",
-    publisher: "Blossom Books",
-    role: "Eindredactie",
-    url: "https://www.blossombooks.nl/product/on-the-edge/",
-    image: "/images/books/on-the-edge.png",
-  },
-  {
-    title: "Samenleven met AI",
-    author: "Lija & Rodolfo Groenewoud van Vliet",
-    publisher: "Bot Uitgevers",
-    role: "Eindredactie",
-    url: "https://www.botuitgevers.nl/product/lija-rodolfo-groenewoud-van-vliet-samenleven-met-ai/",
-    image: "/images/books/samenleven-ai.jpg",
-  },
-  {
-    title: "Eindelijk rust",
-    author: "Koos Neuvel",
-    publisher: "Bot Uitgevers",
-    role: "Eindredactie",
-    url: "https://www.botuitgevers.nl/product/koos-neuvel-eindelijk-rust/",
-    image: "/images/books/eindelijk-rust.png",
-  },
-  {
-    title: "Tegen de oligarchie",
-    author: "Bernie Sanders",
-    publisher: "Bot Uitgevers",
-    role: "Eindredactie",
-    url: "https://www.botuitgevers.nl/product/bernie-sanders-tegen-de-oligarchie/",
-    image: "/images/books/tegen-oligarchie.jpg",
-  },
-  {
-    title: "Aai een badeend in de trein",
-    author: "Milou Gevers",
-    publisher: "Bot Uitgevers",
-    role: "Eindredactie",
-    url: "https://www.botuitgevers.nl/product/milou-gevers-aai-een-badeend-in-de-trein/",
-    image: "/images/books/badeend-trein.jpg",
-  },
-  {
-    title: "Meer dan een kromme rug",
-    author: "Sarah Pielman",
-    publisher: "Self-published",
-    role: "Begeleiding",
-    url: "https://meerdaneenkrommerug.nl/product/pre-order-meer-dan-een-kromme-rug/",
-    image: "/images/books/kromme-rug.png",
-  },
-  {
-    title: "De stilte in Caatjes hoofd",
-    author: "Caroline Hopman",
-    publisher: "Self-published",
-    role: "Begeleiding",
-    url: "https://www.destilteincaatjeshoofd.nl",
-    image: "/images/books/stilte-caatje.jpg",
-  },
-  {
-    title: "De Zilver Saga",
-    author: "Sander Cox",
-    publisher: "Self-published",
-    role: "Begeleiding",
-    url: "https://www.sanx.nl/dezilverjagersaga-roman/",
-    image: "/images/books/zilver-saga.jpg",
-  },
-]
+import { allBooks } from "@/lib/books-data"
 
 export function BooksShowcase() {
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -146,7 +55,7 @@ export function BooksShowcase() {
               id="homepage-books-slider"
               className="flex gap-6 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory hide-scrollbar"
             >
-              {books.map((book, index) => (
+              {allBooks.map((book, index) => (
                 <a
                   key={index}
                   href={book.url}
